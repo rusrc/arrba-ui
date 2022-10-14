@@ -1,0 +1,18 @@
+<!-- <div class="hot__item hot__grid-item hot__item-increase"> -->
+  <header class="hot__item-header">
+    <span class="hot__item-name">
+      <i class="fa fa-car"></i>&nbsp;{{hotItem?.ModelName}}</span>
+    <span class="hot__item-imgCount">{{hotItem?.ImgJsonObject?.ImgJsonOrderList?.length}}&nbsp;
+      <i class="fa fa-camera"></i>
+    </span>
+  </header>
+  <a [routerLink]="['/obyavlenie', hotItem.ID]">
+    <img heightwidth="" [src]="'http://arrba.azurewebsites.net/' + hotItem?.ImgJson" alt="">
+  </a>
+  <footer class="hot__item-footer">
+    <span class="hot__item-city">
+      <i class="fa fa-map-marker"></i>&nbsp;{{hotItem?.CityName}},
+      <span class="hot__item-price">{{hotItem?.Price}} {{hotItem?.CurrencyName}}</span>
+    </span>
+  </footer>
+<!-- </div> -->

@@ -1,0 +1,14 @@
+<app-breadcrumb [routes]="breadcrumbRoutes"></app-breadcrumb>
+<section class="container">
+  <div class="row no-gutters">
+    <div class="col-12 col-md-4 col-lg-3 card border-0 bg-dark text-white d-inline-block" *ngFor="let e of [1,2,3,4,5,6]">
+      <img class="card-img img-thumbnail" src="https://picsum.photos/200/150/?random" alt="Card image">
+      <div class="card-img-overlay">
+        <h5 class="card-text text-center text-dark bg-light p-2 rounded" *ngIf="e === 1">Главная</h5>
+        <a class="btn btn-info btn-block" href="#" *ngIf="e !== 1">Сделать главной</a>
+        <a class="btn btn-danger btn-block" href="#">Удалить</a>
+        <!-- <p class="card-text">{{e}} Чтобы изменить порядок перетащите изображение</p> -->
+      </div>
+    </div>
+  </div>
+</section>

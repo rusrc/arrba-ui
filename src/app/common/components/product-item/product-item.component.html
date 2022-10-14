@@ -1,0 +1,73 @@
+<!-- {{productItem?.Images?.length}} -->
+
+<section *ngIf="index === 1 || index === 3 || index === 5">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-format="fluid"
+         data-ad-layout-key="-gc+3r+68-9q-29"
+         data-ad-client="ca-pub-2973524994939741"
+         data-ad-slot="2229375346"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</section>
+
+<section class="card p-2 mb-2">
+  <div class="row no-gutters">
+
+    <div class="col-12 d-block d-lg-none">
+      <div class="bg-transparent card-body">
+        <a [routerLink]="getUrlToItem()" class="card-title list-group-item-action flex-column align-items-start">
+          <small class="text-muted">{{ productItem?.AddDate | amDateFormat: 'YYYY-MM-DD' }}</small>
+          <div class="h4"> {{ productItem?.Title }} S</div>
+          <div class="h4 text-success text-nowrap">
+            <b> {{ productItem?.ConvertedPrice }} {{productItem?.ConvertedCurrencySymbol ||
+                productItem?.CurrencySymbol }}
+            </b>
+          </div>
+          <!-- <div class="text-muted">{{ productItem?.AddDate | amDateFormat: 'YYYY-MM-DD' }}</div> -->
+          <div class="text-muted">{{productItem?.OtherConvertedPrice}}</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="col-lg-5 col-xl-4">
+      <a [routerLink]="getUrlToItem()">
+        <img class="card-img-top img-fluid rounded"
+          onerror="this.src='http://arrba.azurewebsites.net/Content/Imgs/no_img1.jpg'"
+          src="{{ productItem?.MainImgMiddle }}" alt="{{ productItem?.Title }} '{{ productItem?.Year }}">
+      </a>
+    </div>
+
+    <div class="col-lg-7 col-xl-8">
+      <div class="card-body">
+        <a [routerLink]="getUrlToItem()" class="d-none d-lg-block card-title list-group-item-action flex-column align-items-start">
+          <div class="d-flex w-100 justify-content-between">
+            <h2 class="h5"> {{ productItem?.Title }} B</h2>
+            <div class="h5 text-success text-nowrap">
+              <b> {{ productItem?.ConvertedPrice }} {{productItem?.ConvertedCurrencySymbol ||
+                productItem?.CurrencySymbol }}
+              </b>
+            </div>
+          </div>
+          <div class="d-flex w-100 justify-content-between">
+            <small class="text-muted">{{ productItem?.AddDate | amDateFormat: 'YYYY-MM-DD' }}</small>
+            <small>{{productItem?.OtherConvertedPrice}}</small>
+          </div>
+        </a>
+        <div class="card-text no-gutters pt-2 pb-2">
+          <ul class="list-unstyled">
+            <li class="d-inline-block d-md-inline-block"><small class="text-muted pr-3"><i
+                  class="fa fa-map-marker"></i>&nbsp;г.
+                {{ productItem?.CityNameMultiLang }}</small></li>
+            <li class="d-inline-block d-md-inline-block"><small class="text-muted pr-3"><i class="fa fa-eye"></i>&nbsp;{{
+                productItem?.ViewCount }} Просмотра</small></li>
+            <li class="d-inline-block d-md-inline-block"><small class="text-muted"><i
+                  class="fa fa-envelope"></i>&nbsp;0</small></li>
+          </ul>
+        </div>
+        <p class="card-text"> {{ inShort(productItem.ShortDescription, productItem.Comment) }}</p>
+      </div>
+    </div>
+  </div>
+</section>

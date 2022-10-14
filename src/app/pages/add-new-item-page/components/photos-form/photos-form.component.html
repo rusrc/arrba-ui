@@ -1,0 +1,17 @@
+<div class="jumbotron">
+  <p class="font-weight-bold">Ваши фотографии</p>
+  <input (change)="onFileSelected($event)" type="file" multiple #btnFileInput style="display: none">
+  <button class="btn btn-primary" (click)="btnFileInput.click(); false">Загрузить фотографии</button>
+  <div class="pt-3 pb-3" *ngIf="selectedFiles && folderame">
+    <app-photo-item *ngFor="let file of selectedFiles; let i = index" [file]="file" [fileIndex]="i" [folderame]="folderame"
+      (delete)="onDelete($event)"></app-photo-item>
+  </div>
+  <p class="lead">
+    <small class="text-muted">
+      Фотографии формата jpeg или png, не более 5Mb. До 6 фото - бесплатно, если хотите загрузить больше
+      фотографий, воспользуйтесь
+      услугой в нашем
+      <a routerLink="/room">личном кабинете</a>
+    </small>
+  </p>
+</div>

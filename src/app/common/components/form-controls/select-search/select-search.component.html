@@ -1,0 +1,16 @@
+<div [formGroup]="form">
+  <div class="list-group-item">
+    <label for="exampleInputEmail1">{{property?.PropertyDescription || property?.PropertyName}}</label>
+    <div class="input-group mb-2">
+      <input type="text" (keyup)="onChange($event)" class="form-control" id="inlineFormInputGroup" placeholder="Поиск">
+      <div class="input-group-prepend">
+        <div class="bg-transparent input-group-text"><i class="fa fa-search"></i></div>
+      </div>
+    </div>
+    <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your.</small> -->
+  </div>
+  <div class="list-group" [ngStyle]="styles">
+    <a *ngFor="let option of options" href="#" [ngClass]="{ 'active': option?.ID === selectedOption?.ID }"
+      class="list-group-item list-group-item-action _active" (click)="onSelect($event, option)">{{option?.Name}}</a>
+  </div>
+</div>

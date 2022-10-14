@@ -1,0 +1,71 @@
+<div [formGroup]="form">
+
+  <div *ngIf="!isAuthorized" class="ctrValue--unit">
+    <div class="row ctrValue--unit__footer">
+      <div class="col-md-4">
+        <b>Укажите e-mail
+          <span class="ctrValue__asterics">*</span>
+        </b>
+      </div>
+      <div class="col-md-8">
+        <input [formControlName]="'email'" class="ctrValue--unit__item-input" type="text" placeholder="e-mail...">
+        <span class="text-danger" *ngIf="email?.errors?.required && email?.touched">Обязательное поле</span>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="isAuthorized" class="ctrValue--unit">
+    <div class="row ctrValue--unit__footer">
+      <div class="col-md-4">
+        <b>Ваш e-mail</b>
+      </div>
+      <div class="col-md-8">
+        admin@mail.ru
+      </div>
+    </div>
+  </div>
+
+  <div class="row ctrLinks--unit-comment">
+    <div class="col-md-4">
+      <b>Кто может комментирвоать объявления</b>
+    </div>
+    <div class="col-md-8 ctrLinks--unit-comment__container">
+      <div class="ctrSelect">
+        <footer class="ctrSelect__footer">
+          <app-select [form]="form" [property]="commentModeProperty"></app-select>
+        </footer>
+        <small>
+          Включенные комментарии позволяют вам общаться с наиболее робкими покупателями, которые боятся
+          позвонить. Больше комментариев
+          по делу вы получите от зарегистрированных пользователей. Выключенные комментарии не позволяют
+          общаться
+          с покупателями на сайте.
+        </small>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <label class="col-md-4">
+      <b>Ваш телефон
+        <span class="ctrValue__asterics">*</span>
+      </b>
+    </label>
+    <div class="col-md-6" formArrayName="phoneNumbers">
+      <ng-container *ngFor="let phoneNumber of phoneNumbersForm.controls; let i=index">
+        <div class="form-group input-group">
+          <input [formControlName]="i" type="text" class="form-control" id="exampleInputAmount" placeholder="+7(000)000-00-00">
+          <a href="#" class="btn btn-default input-group-addon" (click)="removePhoneNumber($event, i)"><i class="fa fa-trash"></i></a>
+        </div>
+        <div>
+          <span class="text-danger" *ngIf="phoneNumber?.errors?.required && phoneNumber?.touched">Укажите номер или удалите поле.</span>
+        </div>
+      </ng-container>
+      <br />
+      <button class="b-btn b-btn--blue hidden-xs" (click)="addPhoneNumber($event)">
+        <i class="fa fa-plus"></i> Добавить телефон
+      </button>
+    </div>
+  </div>
+
+</div>

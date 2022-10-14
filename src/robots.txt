@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Crawl-delay: 3.0
+# Sitemap: https://arrba.ru/sitemapindex.xml
+# TODO add SEO for sub folder later
+Disallow: /add-new-item/*

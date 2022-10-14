@@ -1,0 +1,15 @@
+<div *ngIf="this.properType" [formGroup]="form">
+  <label *ngIf="!noTitle" [for]="property?.PropertyName">
+    {{property?.PropertyDescription || property?.PropertyName}}
+    <span *ngIf="required" class="text-danger">&nbsp;*</span>
+  </label>
+  <input 
+    [type]="controlType" 
+    class="form-control _border _bg-light" 
+    [formControl]="control" 
+    [class.is-invalid]="control.touched && (control?.errors?.pattern || control?.errors?.required)"
+    [id]="property?.PropertyName" 
+    [placeholder]="placeHolder"
+    (change)="changeValue($event.target.value, property)">
+    <!-- <span *ngIf="control?.errors?.required && control.touched" class="text-danger">required</span> -->
+</div>

@@ -1,0 +1,627 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="536"
+   height="630"
+   viewBox="0 0 536 630"
+   version="1.1"
+   id="svg248"
+   sodipodi:docname="e20310f_changed.svg"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+  <metadata
+     id="metadata252">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1174"
+     inkscape:window-height="705"
+     id="namedview250"
+     showgrid="false"
+     inkscape:zoom="0.74920635"
+     inkscape:cx="254.16771"
+     inkscape:cy="330.49908"
+     inkscape:window-x="211"
+     inkscape:window-y="167"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg248" />
+  <defs
+     id="defs126">
+    <path
+       id="publication-b"
+       d="M240,4 L240,256 C240,258.209139 238.209139,260 236,260 L4,260 C1.790861,260 3.16642949e-14,258.209139 0,256 L-2.13162821e-14,72.5912259 C-2.22908679e-14,64.6331283 3.16197523,57.001109 8.79006751,51.374752 L51.394429,8.78352612 C57.0202542,3.15943546 64.6494696,-1.27495648e-14 72.6043615,-1.42108547e-14 L236,0 C238.209139,3.09879411e-14 240,1.790861 240,4 Z" />
+    <filter
+       id="publication-a"
+       width="111.7%"
+       height="110.8%"
+       x="-5.8%"
+       y="-3.8%"
+       filterUnits="objectBoundingBox">
+      <feOffset
+         dy="4"
+         in="SourceAlpha"
+         result="shadowOffsetOuter1"
+         id="feOffset3" />
+      <feGaussianBlur
+         in="shadowOffsetOuter1"
+         result="shadowBlurOuter1"
+         stdDeviation="4"
+         id="feGaussianBlur5" />
+      <feComposite
+         in="shadowBlurOuter1"
+         in2="SourceAlpha"
+         operator="out"
+         result="shadowBlurOuter1"
+         id="feComposite7" />
+      <feColorMatrix
+         in="shadowBlurOuter1"
+         values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.18 0"
+         id="feColorMatrix9" />
+    </filter>
+    <linearGradient
+       id="publication-c"
+       x1="100%"
+       x2="0%"
+       y1="100%"
+       y2="0%">
+      <stop
+         offset="0%"
+         stop-color="#00ADFF"
+         stop-opacity=".1"
+         id="stop12" />
+      <stop
+         offset="100%"
+         stop-color="#00ADFF"
+         stop-opacity=".4"
+         id="stop14" />
+    </linearGradient>
+    <path
+       id="publication-d"
+       d="M240,4 L240,141 L0,141 L-7.10542736e-15,72.5052482 C-8.08121276e-15,64.5373557 3.16974181,56.8967711 8.81006618,51.2688006 L51.408617,8.76355245 C57.0328057,3.15168232 64.6534527,8.56491821e-15 72.5985509,7.10542736e-15 L236,0 C238.209139,-4.05812251e-16 240,1.790861 240,4 Z" />
+    <rect
+       id="publication-f"
+       width="240"
+       height="260"
+       rx="4" />
+    <filter
+       id="publication-e"
+       width="111.7%"
+       height="110.8%"
+       x="-5.8%"
+       y="-3.8%"
+       filterUnits="objectBoundingBox">
+      <feOffset
+         dy="4"
+         in="SourceAlpha"
+         result="shadowOffsetOuter1"
+         id="feOffset19" />
+      <feGaussianBlur
+         in="shadowOffsetOuter1"
+         result="shadowBlurOuter1"
+         stdDeviation="4"
+         id="feGaussianBlur21" />
+      <feComposite
+         in="shadowBlurOuter1"
+         in2="SourceAlpha"
+         operator="out"
+         result="shadowBlurOuter1"
+         id="feComposite23" />
+      <feColorMatrix
+         in="shadowBlurOuter1"
+         values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.18 0"
+         id="feColorMatrix25" />
+    </filter>
+    <linearGradient
+       id="publication-g"
+       x1="100%"
+       x2="0%"
+       y1="100%"
+       y2="0%">
+      <stop
+         offset="0%"
+         stop-color="#FD9C9C"
+         id="stop28" />
+      <stop
+         offset="100%"
+         stop-color="#DB3727"
+         id="stop30" />
+    </linearGradient>
+    <linearGradient
+       id="publication-i"
+       x1="0%"
+       y1="100%"
+       y2="0%">
+      <stop
+         offset="0%"
+         stop-color="#FEF6F6"
+         id="stop33" />
+      <stop
+         offset="100%"
+         stop-color="#FD9F9E"
+         id="stop35" />
+    </linearGradient>
+    <path
+       id="publication-h"
+       d="M4,0 L236,0 C238.209139,-4.05812251e-16 240,1.790861 240,4 L240,141 L0,141 L0,4 C-2.705415e-16,1.790861 1.790861,4.05812251e-16 4,0 Z" />
+    <circle
+       id="publication-k"
+       cx="29.5"
+       cy="29.5"
+       r="29.5" />
+    <filter
+       id="publication-j"
+       width="127.1%"
+       height="133.9%"
+       x="-13.6%"
+       y="-13.6%"
+       filterUnits="objectBoundingBox">
+      <feOffset
+         in="SourceAlpha"
+         result="shadowOffsetOuter1"
+         id="feOffset40" />
+      <feGaussianBlur
+         in="shadowOffsetOuter1"
+         result="shadowBlurOuter1"
+         stdDeviation="2"
+         id="feGaussianBlur42" />
+      <feColorMatrix
+         in="shadowBlurOuter1"
+         result="shadowMatrixOuter1"
+         values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.12 0"
+         id="feColorMatrix44" />
+      <feOffset
+         dy="4"
+         in="SourceAlpha"
+         result="shadowOffsetOuter2"
+         id="feOffset46" />
+      <feGaussianBlur
+         in="shadowOffsetOuter2"
+         result="shadowBlurOuter2"
+         stdDeviation="2"
+         id="feGaussianBlur48" />
+      <feColorMatrix
+         in="shadowBlurOuter2"
+         result="shadowMatrixOuter2"
+         values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0"
+         id="feColorMatrix50" />
+      <feMerge
+         id="feMerge56">
+        <feMergeNode
+           in="shadowMatrixOuter1"
+           id="feMergeNode52" />
+        <feMergeNode
+           in="shadowMatrixOuter2"
+           id="feMergeNode54" />
+      </feMerge>
+    </filter>
+    <rect
+       id="publication-m"
+       width="240"
+       height="260"
+       rx="4" />
+    <filter
+       id="publication-l"
+       width="111.7%"
+       height="110.8%"
+       x="-5.8%"
+       y="-3.8%"
+       filterUnits="objectBoundingBox">
+      <feOffset
+         dy="4"
+         in="SourceAlpha"
+         result="shadowOffsetOuter1"
+         id="feOffset60" />
+      <feGaussianBlur
+         in="shadowOffsetOuter1"
+         result="shadowBlurOuter1"
+         stdDeviation="4"
+         id="feGaussianBlur62" />
+      <feComposite
+         in="shadowBlurOuter1"
+         in2="SourceAlpha"
+         operator="out"
+         result="shadowBlurOuter1"
+         id="feComposite64" />
+      <feColorMatrix
+         in="shadowBlurOuter1"
+         values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.18 0"
+         id="feColorMatrix66" />
+    </filter>
+    <linearGradient
+       id="publication-n"
+       x1="0%"
+       y1="100%"
+       y2="0%">
+      <stop
+         offset="0%"
+         stop-color="#F1E4FF"
+         id="stop69" />
+      <stop
+         offset="100%"
+         stop-color="#9F69F2"
+         id="stop71" />
+    </linearGradient>
+    <path
+       id="publication-o"
+       d="M4,0 L236,0 C238.209139,-4.05812251e-16 240,1.790861 240,4 L240,141 L0,141 L0,4 C-2.705415e-16,1.790861 1.790861,4.05812251e-16 4,0 Z" />
+    <circle
+       id="publication-q"
+       cx="29.5"
+       cy="29.5"
+       r="29.5" />
+    <filter
+       id="publication-p"
+       width="127.1%"
+       height="133.9%"
+       x="-13.6%"
+       y="-13.6%"
+       filterUnits="objectBoundingBox">
+      <feOffset
+         in="SourceAlpha"
+         result="shadowOffsetOuter1"
+         id="feOffset76" />
+      <feGaussianBlur
+         in="shadowOffsetOuter1"
+         result="shadowBlurOuter1"
+         stdDeviation="2"
+         id="feGaussianBlur78" />
+      <feColorMatrix
+         in="shadowBlurOuter1"
+         result="shadowMatrixOuter1"
+         values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.12 0"
+         id="feColorMatrix80" />
+      <feOffset
+         dy="4"
+         in="SourceAlpha"
+         result="shadowOffsetOuter2"
+         id="feOffset82" />
+      <feGaussianBlur
+         in="shadowOffsetOuter2"
+         result="shadowBlurOuter2"
+         stdDeviation="2"
+         id="feGaussianBlur84" />
+      <feColorMatrix
+         in="shadowBlurOuter2"
+         result="shadowMatrixOuter2"
+         values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0"
+         id="feColorMatrix86" />
+      <feMerge
+         id="feMerge92">
+        <feMergeNode
+           in="shadowMatrixOuter1"
+           id="feMergeNode88" />
+        <feMergeNode
+           in="shadowMatrixOuter2"
+           id="feMergeNode90" />
+      </feMerge>
+    </filter>
+    <rect
+       id="publication-s"
+       width="88"
+       height="30"
+       x="11.103"
+       y=".888"
+       rx="2" />
+    <filter
+       id="publication-r"
+       width="140.9%"
+       height="220%"
+       x="-20.5%"
+       y="-30%"
+       filterUnits="objectBoundingBox">
+      <feOffset
+         dy="9"
+         in="SourceAlpha"
+         result="shadowOffsetOuter1"
+         id="feOffset96" />
+      <feGaussianBlur
+         in="shadowOffsetOuter1"
+         result="shadowBlurOuter1"
+         stdDeviation="4.5"
+         id="feGaussianBlur98" />
+      <feColorMatrix
+         in="shadowBlurOuter1"
+         values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.15 0"
+         id="feColorMatrix100" />
+    </filter>
+    <linearGradient
+       id="publication-t"
+       x1="66.447%"
+       x2="20.012%"
+       y1="86.476%"
+       y2="34.843%">
+      <stop
+         offset="0%"
+         stop-color="#FDD1B0"
+         id="stop103" />
+      <stop
+         offset="100%"
+         stop-color="#E6B18A"
+         id="stop105" />
+    </linearGradient>
+    <linearGradient
+       id="publication-u"
+       x1="100%"
+       x2="50%"
+       y1="100%"
+       y2="0%">
+      <stop
+         offset="0%"
+         stop-color="#00ADFF"
+         id="stop108" />
+      <stop
+         offset="100%"
+         stop-color="#009DE6"
+         id="stop110" />
+    </linearGradient>
+    <linearGradient
+       id="publication-x"
+       x1="0%"
+       y1="0%"
+       y2="100%">
+      <stop
+         offset="0%"
+         stop-color="#FF6400"
+         id="stop113" />
+      <stop
+         offset="100%"
+         stop-color="#DC001B"
+         id="stop115" />
+    </linearGradient>
+    <path
+       id="publication-w"
+       d="M-3.33955086e-13,75 L-3.33955086e-13,72.5052482 C-3.31392416e-13,64.5373557 3.16974181,56.8967711 8.81006618,51.2688006 L51.408617,8.76355245 C57.0328057,3.15168232 64.6534527,-1.08674633e-13 72.5985509,-1.10134124e-13 L75,-1.10358936e-13 C66.7157288,-5.53216229e-14 60,6.71572875 60,15 L60,60 L15,60 C6.71572875,60 4.18205683e-13,66.7157288 4.19220214e-13,75 Z" />
+    <filter
+       id="publication-v"
+       width="121.3%"
+       height="121.3%"
+       x="-10.7%"
+       y="-5.3%"
+       filterUnits="objectBoundingBox">
+      <feOffset
+         dy="4"
+         in="SourceAlpha"
+         result="shadowOffsetOuter1"
+         id="feOffset119" />
+      <feGaussianBlur
+         in="shadowOffsetOuter1"
+         result="shadowBlurOuter1"
+         stdDeviation="2"
+         id="feGaussianBlur121" />
+      <feColorMatrix
+         in="shadowBlurOuter1"
+         values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.15 0"
+         id="feColorMatrix123" />
+    </filter>
+  </defs>
+  <g
+     transform="translate(8 4)"
+     id="g246"
+     fill-rule="evenodd"
+     fill="none">
+    <g
+       transform="translate(280 160)"
+       id="g142">
+      <use
+         xlink:href="#publication-b"
+         id="use128"
+         filter="url(#publication-a)"
+         fill="#000" />
+      <path
+         d="M240,4 L240,256 C240,258.209139 238.209139,260 236,260 L4,260 C1.790861,260 3.16642949e-14,258.209139 0,256 L-2.13162821e-14,72.5912259 C-2.22908679e-14,64.6331283 3.16197523,57.001109 8.79006751,51.374752 L51.394429,8.78352612 C57.0202542,3.15943546 64.6494696,-1.27495648e-14 72.6043615,-1.42108547e-14 L236,0 C238.209139,3.09879411e-14 240,1.790861 240,4 Z"
+         id="path130"
+         fill="#FFF" />
+      <use
+         xlink:href="#publication-d"
+         id="use132"
+         fill="url(#publication-c)" />
+      <use
+         xlink:href="#publication-d"
+         id="use134"
+         fill="#EFF3F7" />
+      <use
+         xlink:href="#publication-d"
+         id="use136"
+         fill="#DC001B" />
+      <path
+         d="M37,161 L207,161 C209.761424,161 212,163.238576 212,166 C212,168.761424 209.761424,171 207,171 L37,171 C34.2385763,171 32,168.761424 32,166 C32,163.238576 34.2385763,161 37,161 Z M37,185 L87,185 C89.7614237,185 92,187.238576 92,190 C92,192.761424 89.7614237,195 87,195 L37,195 C34.2385763,195 32,192.761424 32,190 C32,187.238576 34.2385763,185 37,185 Z M107,185 L207,185 C209.761424,185 212,187.238576 212,190 C212,192.761424 209.761424,195 207,195 L107,195 C104.238576,195 102,192.761424 102,190 C102,187.238576 104.238576,185 107,185 Z M37,210 L207,210 C209.761424,210 212,212.238576 212,215 C212,217.761424 209.761424,220 207,220 L37,220 C34.2385763,220 32,217.761424 32,215 C32,212.238576 34.2385763,210 37,210 Z"
+         id="path140"
+         fill-rule="nonzero"
+         fill="#EFF3F7" />
+    </g>
+    <use
+       xlink:href="#publication-f"
+       id="use144"
+       filter="url(#publication-e)"
+       fill="#000" />
+    <rect
+       width="240"
+       height="260"
+       rx="4"
+       id="rect146"
+       fill="#FFF" />
+    <use
+       xlink:href="#publication-h"
+       id="use148"
+       fill="url(#publication-g)" />
+    <use
+       xlink:href="#publication-h"
+       id="use150"
+       fill="url(#publication-i)" />
+    <use
+       xlink:href="#publication-h"
+       id="use152"
+       fill="#DA3D2C" />
+    <g
+       transform="translate(161 102)"
+       id="g162">
+      <use
+         xlink:href="#publication-k"
+         id="use154"
+         filter="url(#publication-j)"
+         fill="#000" />
+      <use
+         xlink:href="#publication-k"
+         id="use156"
+         fill="#00ADFF" />
+      <use
+         xlink:href="#publication-k"
+         id="use158"
+         fill="#FFF" />
+      <polygon
+         points="14 29.517 17.032 26.433 26.346 35.818 42.968 19 46 22.084 26.346 42"
+         id="polygon160"
+         fill="#96CD42" />
+    </g>
+    <path
+       d="M35,171 L205,171 C207.761424,171 210,173.238576 210,176 C210,178.761424 207.761424,181 205,181 L35,181 C32.2385763,181 30,178.761424 30,176 C30,173.238576 32.2385763,171 35,171 Z M35,195 L85,195 C87.7614237,195 90,197.238576 90,200 C90,202.761424 87.7614237,205 85,205 L35,205 C32.2385763,205 30,202.761424 30,200 C30,197.238576 32.2385763,195 35,195 Z M105,195 L205,195 C207.761424,195 210,197.238576 210,200 C210,202.761424 207.761424,205 205,205 L105,205 C102.238576,205 100,202.761424 100,200 C100,197.238576 102.238576,195 105,195 Z M35,220 L205,220 C207.761424,220 210,222.238576 210,225 C210,227.761424 207.761424,230 205,230 L35,230 C32.2385763,230 30,227.761424 30,225 C30,222.238576 32.2385763,220 35,220 Z"
+       id="path164"
+       fill-rule="nonzero"
+       fill="#EFF3F7" />
+    <path
+       d="M170.75375,56.6714437 L159.783982,55.2671298 C155.578425,55.2666298 151.480646,53.9478373 148.076247,51.4992173 L134.53357,41.7580262 C131.127964,39.3129253 127.030288,37.997627 122.825836,38.0000032 L87.1142544,38.0000032 C82.223991,37.99915 77.5038342,39.779996 73.8508075,43.0041075 L61.3851619,54.011159 C57.9225592,57.6788393 55.9972029,62.5158218 56.0000031,67.5400417 L56.0000031,78.6657676 C56.0000031,85.2199743 61.3578203,90.5332086 67.9670228,90.5332086 L73.880725,90.5332086 C75.6536504,97.2865371 81.8025047,102 88.8394997,102 C95.8764947,102 102.025349,97.2865371 103.798274,90.5332086 L135.979585,90.5332086 C137.75251,97.2865371 143.901365,102 150.93836,102 C157.975355,102 164.124209,97.2865371 165.897134,90.5332086 L169.038477,90.5332086 C176.749213,90.5332086 183,84.3344353 183,76.6878608 L183,70.4080066 C182.998016,63.4207002 177.746309,57.529884 170.75375,56.6714437 Z M88.7796646,94.0242142 C85.74153,94.0282153 83.0003058,92.2163951 81.8348653,89.4340285 C80.6694248,86.651662 81.3094252,83.4470315 83.4562847,81.3152051 C85.6031442,79.1833787 88.8338111,78.5444458 91.6410706,79.69649 C94.44833,80.8485343 96.2789943,83.5645383 96.278997,86.577395 C96.2735193,90.6840491 92.9207664,94.0133248 88.7796646,94.0242142 Z M150.878525,94.0242142 C146.73125,94.0242142 143.36922,90.6901596 143.36922,86.577395 C143.36922,82.4646303 146.73125,79.1305757 150.878525,79.1305757 C155.025799,79.1305757 158.387829,82.4646303 158.387829,86.577395 C158.382336,90.6879009 155.023521,94.0187662 150.878525,94.0242142 Z M174.952179,76.6878608 C174.952179,79.9649641 172.273271,82.6215813 168.968669,82.6215813 L165.827327,82.6215813 C164.040074,75.8818591 157.8959,71.1839684 150.868552,71.1839684 C143.841204,71.1839684 137.69703,75.8818591 135.909777,82.6215813 L103.718494,82.6215813 C101.931242,75.8818591 95.7870676,71.1839684 88.7597196,71.1839684 C81.7323715,71.1839684 75.5881972,75.8818591 73.8009449,82.6215813 L67.8872427,82.6215813 C65.6841752,82.6215813 63.8982361,80.8505032 63.8982361,78.6657676 L63.8982361,67.5400417 C63.8829276,64.6281546 64.9477259,61.8123198 66.889991,59.6284144 L79.1362412,48.9180489 C81.3384716,46.9919456 84.1779338,45.9360075 87.1142544,45.9511887 L122.825836,45.9511887 C125.333512,45.9589058 127.775382,46.7476397 129.806597,48.2060025 L143.349275,57.9471936 C147.955643,61.2693105 153.480886,63.1060905 159.175658,63.2084258 L169.736553,64.5632919 C172.719285,64.9460557 174.951985,67.4649899 174.952179,70.4475648 L174.952179,76.6878608 Z"
+       id="path166"
+       fill-rule="nonzero"
+       fill="#FFF" />
+    <g
+       transform="translate(0 300)"
+       id="g198">
+      <use
+         xlink:href="#publication-m"
+         id="use168"
+         filter="url(#publication-l)"
+         fill="#000" />
+      <rect
+         width="240"
+         height="260"
+         rx="4"
+         id="rect170"
+         fill="#FFF" />
+      <use
+         xlink:href="#publication-o"
+         id="use172"
+         fill="url(#publication-n)" />
+      <use
+         xlink:href="#publication-o"
+         id="use174"
+         fill="#EFF3F7" />
+      <path
+         d="M35,171 L205,171 C207.761424,171 210,173.238576 210,176 C210,178.761424 207.761424,181 205,181 L35,181 C32.2385763,181 30,178.761424 30,176 C30,173.238576 32.2385763,171 35,171 Z M35,195 L85,195 C87.7614237,195 90,197.238576 90,200 C90,202.761424 87.7614237,205 85,205 L35,205 C32.2385763,205 30,202.761424 30,200 C30,197.238576 32.2385763,195 35,195 Z M105,195 L205,195 C207.761424,195 210,197.238576 210,200 C210,202.761424 207.761424,205 205,205 L105,205 C102.238576,205 100,202.761424 100,200 C100,197.238576 102.238576,195 105,195 Z M35,220 L205,220 C207.761424,220 210,222.238576 210,225 C210,227.761424 207.761424,230 205,230 L35,230 C32.2385763,230 30,227.761424 30,225 C30,222.238576 32.2385763,220 35,220 Z"
+         id="path176"
+         fill-rule="nonzero"
+         fill="#EFF3F7" />
+      <g
+         transform="translate(78 30)"
+         id="g186"
+         fill-rule="nonzero">
+        <circle
+           cx="60.5"
+           cy="61.5"
+           r="23.5"
+           id="circle178"
+           fill="#96CD42" />
+        <circle
+           cx="59.5"
+           cy="18.5"
+           r="14.5"
+           id="circle180"
+           fill="#FD6266" />
+        <circle
+           cx="20"
+           cy="20"
+           r="20"
+           id="circle182"
+           fill="#17A9FB" />
+        <circle
+           cx="18.5"
+           cy="63.5"
+           r="13.5"
+           id="circle184"
+           fill="#9F69F2" />
+      </g>
+      <g
+         transform="translate(161 101)"
+         id="g196">
+        <use
+           xlink:href="#publication-q"
+           id="use188"
+           filter="url(#publication-p)"
+           fill="#000" />
+        <use
+           xlink:href="#publication-q"
+           id="use190"
+           fill="#00ADFF" />
+        <use
+           xlink:href="#publication-q"
+           id="use192"
+           fill="#FFF" />
+        <polygon
+           points="0 10.517 3.032 7.433 12.346 16.818 28.968 0 32 3.084 12.346 23"
+           transform="translate(14 19)"
+           id="polygon194"
+           fill="#96CD42" />
+      </g>
+    </g>
+    <g
+       transform="translate(280 160)"
+       id="g244">
+      <g
+         transform="translate(9 12)"
+         id="g232"
+         fill-rule="nonzero">
+        <g
+           transform="rotate(-28 95.043 22.187)"
+           id="g220">
+          <use
+             xlink:href="#publication-s"
+             id="use216"
+             filter="url(#publication-r)"
+             fill="#000" />
+        </g>
+      </g>
+      <use
+         xlink:href="#publication-w"
+         id="use234"
+         filter="url(#publication-v)"
+         fill="#000" />
+      <use
+         xlink:href="#publication-w"
+         id="use236"
+         fill="#FFF" />
+      <use
+         xlink:href="#publication-w"
+         id="use238"
+         fill="url(#publication-x)" />
+      <use
+         xlink:href="#publication-w"
+         id="use240"
+         fill="#ED400D" />
+      <use
+         xlink:href="#publication-w"
+         id="use242"
+         fill="#FF9494" />
+    </g>
+  </g>
+</svg>

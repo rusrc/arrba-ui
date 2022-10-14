@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb bg-transparent">
+        <li class="breadcrumb-item text-lowercase" [attr.aria-current]="i === routes.length - 1? 'page': ''" [ngClass]="i === routes.length - 1? 'active': ''"
+          *ngFor="let route of routes; let i = index">
+          <a *ngIf="i !== routes.length - 1" [routerLink]="route.value">{{route.key}}</a>
+          <span *ngIf="i == routes.length - 1">{{route.key}}</span>
+        </li>
+      </ol>
+    </nav>
+  </div>
+</div>

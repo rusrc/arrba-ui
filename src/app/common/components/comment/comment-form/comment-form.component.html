@@ -1,0 +1,54 @@
+<section class="comment-form">
+  <header class="row">
+    <div class="col-md-12">
+      <div class="comment-form__title">Написать продавцу</div>
+    </div>
+  </header>
+  <div class="row">
+    <div class="col-md-6">
+      <label class="comment-form__lbl" for="">Ваше имя</label>
+      <input class="comment-form__control" type="text" name="name" value="">
+    </div>
+    <div class="col-md-6">
+      <label class="comment-form__lbl" for="">Ваш e-mail</label>
+      <input class="comment-form__control" type="text" name="name" value="">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <form method="POST">
+        <input type="hidden" name="adId" value="126">
+        <input type="hidden" name="replyTo" value="23151">
+
+        <div class="ctrSelect">
+          <header class="ctrSelect__title--forComment">
+            Иван, предложите обмен
+            <i class="fa fa-question-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="Если у Вас есть свои объявления, Вы можете предложить обмен"></i>
+          </header>
+          <footer class="ctrSelect__footer">
+            <select class="ctrSelect__default--forComment" name="offered_id">
+              <option value=""></option>
+              <option value="101">Kawasaki versus '2014</option>
+              <option value="102">BMW m200 '2010</option>
+              <option value="103">Nissan Patrol '2010</option>
+            </select>
+          </footer>
+        </div>
+
+        <!--<label for="">Сообщение</label>-->
+        <textarea class="comment-form__control comment-form__control--area" name="msg" rows="6" placeholder="Введите сообщение..."></textarea>
+      </form>
+    </div>
+  </div>
+  <footer class="row">
+    <div class="col-md-12">
+      <span class="comment-form__agreement">
+        <i>*</i> Оставляя комментарий, Вы соглашаетесь с нашими
+        <a href="#">правилами</a>
+      </span>
+      <a href="ShowAdList.html" class="b-btn b-btn--blue" type="submit">
+        Оставить комментарий
+      </a>
+    </div>
+  </footer>
+</section>

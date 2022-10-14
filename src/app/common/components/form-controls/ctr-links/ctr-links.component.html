@@ -1,0 +1,35 @@
+<ng-container [formGroup]="form">
+  <input type="hidden" [formControl]="control">
+  <ul class="list-unstyled m-0">
+    <li class="d-inline-flex font-weight-bold pt-2 pb-2 pr-2"><a href="#">{{blockName}}</a></li>
+    <ng-container *ngFor="let option of property?.SelectOptions">
+      <li *ngIf="option?.isHead" class="d-inline-flex">
+        <a class="p-2" href="#" [ngClass]="{
+            'bg-dark rounded text-white': option?.isActive, 
+            '_text-dark': !option?.isActive
+          }"
+          (click)="selectOption($event, option)" title="{{option?.Name}}">{{option?.Name}}</a>
+      </li>
+    </ng-container>
+    <li class="d-inline-flex" *ngIf="(property?.SelectOptions?.length > headCount)">
+      <a class="p-2" href="#" (click)="toggleShowHide($event)"><i class="fas fa-plus-circle"></i> Еще</a>
+    </li>
+  </ul>
+  <footer class="row _d-none" [class.bg-white]="showState==='_active'" *ngIf="(property?.SelectOptions?.length > headCount) && showMore"
+    [@showHideState]="showState">
+    <div class="col-12 col-sm-6 col-md-4" *ngFor="let lettererList of formMatrix()">
+      <div class="position-relative pl-4" *ngFor="let letter of lettererList">
+        <span class="position-absolute fixed-top font-weight-bold text-muted mt-1" style="width:20px;">{{letter?.Letter}}</span>
+        <ul class="list-unstyled m-0">
+          <li *ngFor="let item of letter?.Items">
+            <a class="p-1 d-block" href="#" [ngClass]="{
+              'bg-dark rounded text-white text-center': item?.isActive, 
+              '_text-dark': !item?.isActive
+            }"
+              title="{{item?.Name}}" (click)="selectOption($event, item)">{{item?.Name}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</ng-container>

@@ -1,0 +1,162 @@
+<app-breadcrumb [routes]="breadcrumbRoutes"></app-breadcrumb>
+
+<div class="container">
+  <div class="row pb-3">
+    <div class="col-lg-12">
+      <h1 class="h3">Подать объявление в раздел {{ready ? category?.Name: 'loading...'}}</h1>
+      <small class="text-muted">
+        Срок действия объявления на сайте - 7 дней. Продлить объявление можно воспользовавшись соотвтетсвующей
+        услугой в вашем
+        <a routerLink="/room">личном кабинете</a>
+      </small>
+    </div>
+  </div>
+
+  <div *ngIf="!ready" class="row">
+    <div class="col"> loading... </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-8 col-md-8 pt-3">
+      <form *ngIf="ready" (ngSubmit)="onSubmit()" [formGroup]="form">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <app-select-search [form]="form" [property]="brand" (select)="onBrandSelected($event)"></app-select-search>
+            <!-- <app-select *ngIf="brand" [form]="form" [multiple]="true" [property]="brand" [required]="true"
+              (changedValue)="onBrandSelected($event)">
+            </app-select> -->
+          </div>
+          <div class="form-group col-md-6">
+            <ng-container *ngIf="model && model.SelectOptions">
+                <app-select-search [form]="form" [property]="model"></app-select-search>
+            </ng-container>
+            <!-- <app-select *ngIf="model" [form]="form" [multiple]="true" [property]="model" [required]="false">
+            </app-select> -->
+          </div>
+        </div>
+        <!-- New model -->
+        <div class="form-group">
+          <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>Вы можете указать модель (Необязательно)</strong>
+            <app-value [form]="form" [property]="newModel" [noTitle]="true" [controlType]="text"></app-value>
+          </div>
+        </div>
+        <!-- Type of vehicle -->
+        <div class="form-group">
+          <app-select-inline *ngIf="itemType" [title]="'Тип'" [form]="form" [property]="itemType" [required]="true">
+          </app-select-inline>
+        </div>
+        <!-- Year -->
+        <div class="form-row">
+          <div class="form-group col-md-2">
+            <app-value [form]="form" [property]="year" [required]="true" [placeHolder]="'2018'"></app-value>
+          </div>
+        </div>
+        <!-- Price and currency -->
+        <div class="form-row">
+          <div class="form-group col-md-5">
+            <app-value [form]="form" [property]="price" [required]="true"></app-value>
+          </div>
+          <div class="form-group col-md-6">
+            <app-select-inline *ngIf="currency" [title]="'Валюта'" [form]="form" [property]="currency" [required]="true"
+              [uppercase]="true"></app-select-inline>
+          </div>
+        </div>
+        <!-- Select inline properties -->
+        <hr>
+        <div class="form-row" *ngIf="props">
+          <div class="form-group col-md-12" *ngFor="let propertySelectControl of getSelects(props)">
+            <app-select-inline [title]="propertySelectControl?.PropertyDescription" [form]="formProperties"
+              [property]="propertySelectControl"></app-select-inline>
+          </div>
+        </div>
+        <!-- Values -->
+        <br />
+        <div class="form-row" *ngIf="(props)">
+          <div class="form-group col-md-6" *ngFor="let property of getValues(props)">
+            <app-value [form]="formProperties" [property]="property" [noTitle]="true"></app-value>
+          </div>
+        </div>
+        <!-- Check boxes -->
+        <br />
+        <app-check-box-group *ngIf="(props)" [form]="formProperties" [properties]="getChecks(props)">
+        </app-check-box-group>
+        <!-- Countries and cities -->
+        <br />
+        <div class="form-row">
+          <div class="form-group">
+            <app-select *ngIf="city" [form]="form" [property]="city" [multiple]="false"></app-select>
+          </div>
+        </div>
+        <br />
+        <div class="form-row">
+          <div class="form-group">
+            <!-- <label for="photos">Ваши фотографии</label> -->
+            <app-photos-form [form]="form"></app-photos-form>
+          </div>
+        </div>
+        <hr />
+        <div *ngIf="!isAuthorized" class="form-row">
+          <div class="form-group col-md-8">
+            <app-value [controlType]="text" [form]="form" [property]="email" [required]="true"
+              [placeHolder]="'example@mail.com'"></app-value>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-8">
+            <label for="inputState">Кто может комментирвоать объявления</label>
+            <select id="inputState" class="form-control text-muted">
+              <option selected>Все могут комментировать</option>
+              <option>...</option>
+            </select>
+            <small class="d-block p-2">
+              Включенные комментарии позволяют вам общаться с наиболее робкими покупателями, которые
+              боятся позвонить. Больше комментариев по делу вы получите от зарегистрированных
+              пользователей. Выключенные комментарии не позволяют общаться с покупателями на сайте.
+            </small>
+          </div>
+        </div>
+        <!-- Phones *ngIf="profile$ | async as profile"-->
+        <div class="form-row">
+          <div class="form-group col-md-6" *ngIf="!isAuthorized">
+            <app-add-phones [form]="form"></app-add-phones>
+          </div>
+          <div class="form-group col-md-6" *ngIf="isAuthorized && profile$ | async as profile">
+            <app-add-phones [form]="form" [phoneNumbers]="profile?.phones"></app-add-phones>
+          </div>
+        </div>
+        <!-- Comment -->
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <label for="additionalCommentId">У вас есть дополнительный коментарий?</label>
+            <textarea class="form-control" [formControlName]="'additionalComment'" id="additionalCommentId"
+              rows="6"></textarea>
+            <small class="d-block p-2">
+              Максимальная длина текста 2000 символов. Осталось 2000.
+            </small>
+          </div>
+        </div>
+        <div class="form-row">
+          <span class="text-danger">
+            {{errorMessage}}
+          </span>
+        </div>
+        <button type="submit" class="btn btn-primary">Продать</button>
+        <small class="d-block p-2">
+          Вы можете подать бесплатно до 10 объявлений в неделю на один номер телефона в одну рубрику. Каждое
+          объявление сверх этого количества потребует либо использования услуги личного кабинета «Публиковать
+          объявление» стоимостью 45 единиц, либо отправки sms-сообщения за 100 тенге. Удаление любого ранее
+          поданного объявления никак не влияет на недельный лимит.
+        </small>
+      </form>
+    </div>
+    <div class="col-lg-4 col-md-4">
+      <aside class="aside">
+        <app-banner></app-banner>
+        <div class="aside__item">
+          <app-news-block></app-news-block>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>

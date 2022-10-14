@@ -1,0 +1,25 @@
+<app-breadcrumb [routes]="breadcrumbRoutes"></app-breadcrumb>
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <div *ngIf="dealerships$ | async as dealerships">
+        <ng-container *ngFor="let dealership of dealerships">
+          <div class="card mb-2">
+            <a [routerLink]="['/', 'dealers', dealership?.Id]" class="card-header bg-transparent">
+              {{dealership?.Name}}
+            </a>
+            <!-- <div class="card-body">
+              <p class="card-title">{{dealership?.Address}}</p>
+              <p class="card-text" *ngIf="dealership?.SubwayStations">
+                {{dealership?.SubwayStations}}
+              </p>
+            </div> -->
+          </div>
+        </ng-container>
+      </div>
+    </div>
+    <div class="col-4">
+      <app-news-block></app-news-block>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<aside>
+  <header class="d-flex justify-content-between pt-3 pb-3">
+    <span>Новости</span>
+    <a href="https://news.arrba.ru" target="blank">
+      <i class="fa fa-reorder"></i>
+      Все новости
+    </a>
+  </header>
+  <ng-container *ngFor="let item of news; let i = index">
+    <app-news-block-item [index]="i" [item]="item"></app-news-block-item>
+  </ng-container>
+
+</aside>

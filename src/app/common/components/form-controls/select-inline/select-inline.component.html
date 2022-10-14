@@ -1,0 +1,14 @@
+<!-- text-uppercase -->
+<label for="inputAddress">{{title}}<span class="text-danger" *ngIf="required">&nbsp;*</span></label>
+<div [formGroup]="form">
+  <a href="#" class="p-1 pr-3 pl-3 mr-2 mb-1 mt-1 d-inline-block rounded" *ngFor="let option of property?.SelectOptions"
+    [ngStyle]="parseMetaData(option?.MetaDate)" 
+    [ngClass]="{
+      'bg-dark text-white': selectedOption === option, 
+      'bg-light text-dark': !option?.MetaDate && selectedOption !== option && !(control?.errors?.required && control?.touched),
+      'text-danger': control?.errors?.required && control?.touched
+    }"
+
+    [ngClass]="uppercase? 'text-uppercase':'text-lowercase'"
+    (click)="onSelect($event, option)">{{option.Name}}</a>
+</div>

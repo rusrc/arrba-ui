@@ -1,0 +1,8 @@
+<div class="d-flex w-100 justify-content-between">
+  <h2 class="mb-1 h5">
+    <span class="text-success">{{item?.Price | number: '1.0-0' }}</span>
+    {{item?.Title || 'No title'}}</h2>
+  <small>{{item?.AddDate | amDateFormat: 'YYYY-MM-DD'}}</small>
+</div>
+<p class="mb-1">{{(item?.Comment || item?.Description || '').substring(0, 100)}}</p>
+<small>Редактировать</small>

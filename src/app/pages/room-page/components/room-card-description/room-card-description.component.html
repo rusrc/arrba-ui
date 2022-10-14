@@ -1,0 +1,20 @@
+<div class="card-body" (click)="makeEditable()">
+  <div class="card-text d-flex w-100 justify-content-between" (click)="toggleShowHide($event)">
+    <h5 class="card-title text-muted">ОПИСАНИЕ</h5>
+    <div><a class="text-dark" href="#"><i class="fa" [ngClass]="showState=== 'inactive'? 'fa-angle-down': 'fa-angle-up'"></i></a></div>
+  </div>
+  <div [@showHideState]="showState">
+    <div (clickOutside)="onClickOutside($event)">
+      <p class="card-text  w-100 justify-content-between _d-none" [ngClass]="!isEditable?'d-flex': 'd-none'">
+        <span *ngIf="adVehicle?.Description">{{adVehicle?.Description}}</span>
+        <span *ngIf="!adVehicle?.Description">Пока ничего нет</span>
+        <a href="#" class="text-muted"><i class="fa fa-edit"></i></a>
+      </p>
+      <div class="form-group">
+        <textarea (change)="onChange($event.target.value)" [ngClass]="isEditable?'d-block': 'd-none'" class="form-control"
+          id="editableInput">{{adVehicle?.Description}}
+        </textarea>
+      </div>
+    </div>
+  </div>
+</div>

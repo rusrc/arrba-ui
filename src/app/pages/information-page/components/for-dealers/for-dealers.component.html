@@ -1,0 +1,274 @@
+<app-breadcrumb [routes]="[{key:'главная', value:'/'}, {key: 'автосалонам и дилерам', value:'/'}]">
+</app-breadcrumb>
+
+<style>
+  .product-device {
+    position: absolute;
+    right: 9%;
+    bottom: -36%;
+    width: 150px;
+    height: 810px;
+    /* background-color: #ffc107; */
+    /* border-radius: 21px; */
+    -webkit-transform: rotate(30deg);
+    transform: rotate(30deg);
+  }
+
+  .product-device-2 {
+    top: -30%;
+    right: auto;
+    bottom: 0;
+    left: 10%;
+    /* background-color: #ffc107; */
+  }
+
+</style>
+
+<div class="position-relative _jumbotron overflow-hidden p-3 p-md-5 m-md-3 text-center _bg-light">
+  <div class="col-md-5 p-lg-3 mx-auto my-5">
+    <h1 class="display-4">Автосалонам и дилерам</h1>
+    <p class="lead">Аррба.ру - площадка где можно разместить
+      Ваш автосалон за адекватные деньги и <span class="text-danger">не переплачивать</span> обнаглевшим гиганам</p>
+    <a class="btn btn-lg btn-outline-warning" href="#">Станьте нашим партнером</a>
+  </div>
+  <div class="product-device shadow-sm d-none d-md-block bg-warning"></div>
+  <div class="product-device product-device-2 shadow-sm d-none d-md-block bg-warning"></div>
+</div>
+
+<div class="container">
+  <div class="card-deck mb-3 text-center">
+    <div class="row mx-auto">
+      <div class="col-md-12">
+        <h2 class="display-4">Сервисы и услуги</h2>
+        <ul class="lead list-group list-group-flush">
+          <li class="list-group-item">Отображение ваших товаров в поисковиках</li>
+          <li class="list-group-item">Поможем интегрировать ваши системы</li>
+          <li class="list-group-item">У вас будет свой кабинет, где вы можете управлять вашими объявлениями</li>
+          <li class="list-group-item">Автоматическое размещение объявлений на основных сайтах гигантов<span
+              class="text-warning">(в разработке)</span></li>
+          <li class="list-group-item">Аналитика цен по брендам и маркам по вашему региону <span class="text-warning">(в
+              разработке)</span></li>
+          <li class="list-group-item">Интеграция с вашей 1С <span class="text-warning">(в разработке)</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br />
+<div class="container">
+  <div class="row featurette">
+    <div class="col-md-7">
+      <h2 class="lead display-4">Отображение ваших товаров в поисковиках</h2>
+      <p class="lead">Наш сайт постоянно оптимизируется под поисковые системы, чтобы ваши позиции отображались
+        максимально выгодно</p>
+      <ul class="lead list-group list-group-flush">
+        <li class="list-group-item">Оптимизированные объявления для поисковых систем</li>
+        <li class="list-group-item">Используются google, yandex, mail.ru, bing и другие</li>
+      </ul>
+    </div>
+    <div class="col-md-5">
+      <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="500x500"
+        src="../../../../../static/images/for-dealer.seo.arrba.svg" data-holder-rendered="true"
+        style="width: 500px; height: 500px;">
+    </div>
+  </div>
+</div>
+
+<br />
+<div class="container">
+  <div class="row">
+    <div class="col-md-7 order-md-2">
+      <h2 class="lead display-4">Автоматическое размещение объявлений</h2>
+      <p class="lead">Редактируйте позиции <span class="text-danger">в одном месте, а размещайте везде</span>.
+        Автоматическое размещение объявлений о
+        продаже автомобилей и техники на основных сайтах</p>
+      <ul class="lead list-group list-group-flush">
+        <li class="list-group-item">Импортируйте автомобили и технику автоматически</li>
+        <li class="list-group-item">Публикуйте объявления о продаже</li>
+        <li class="list-group-item">Редактируйте позиции во одном месте</li>
+        <li class="list-group-item">Добавляйте/редактируйте фото и описание</li>
+      </ul>
+    </div>
+    <div class="col-md-5 order-md-1">
+      <img class="img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="500x500"
+        src="../../../../../static/images/for-dealer.arrba.svg" data-holder-rendered="true"
+        style="width: 500px; height: 500px;">
+    </div>
+  </div>
+</div>
+
+<br />
+<br />
+<br />
+<div class="container">
+  <div class="row">
+    <div class="col-md-7">
+      <h2 class="lead display-4">Быстрый анализ рынка</h2>
+      <p class="lead">Вычисляем конкурентную цену для автомобиля и техники.</p>
+      <ul class="lead list-group list-group-flush">
+        <li class="list-group-item">Анализ поможет указать конкурентную цену</li>
+        <li class="list-group-item">Покажет количество аналогичных автомобилей, их среднюю стоимость, пробег и срок
+          продажи</li>
+        <li class="list-group-item">Расширит радиус поиска, если рядом с вашим автосалоном не найдется достаточно
+          предложений</li>
+      </ul>
+    </div>
+    <div class="col-md-5">
+      <div class="shadow p-3 mb-2">
+        <h4>Автомобили</h4>
+        <p class="lead">Volkswagen Tiguan 2011, внедорожник, втомат, бензин, левый руль</p>
+        <form class="needs-validation" novalidate="">
+          <div class="row">
+            <div class="col-md-8 mb-3">
+              <label class="control-label font-weight-bold" for="country">РЕГИОН</label>
+              <select class="custom-select d-block w-100" id="country" required="">
+                <option value="">Регион...</option>
+                <option>Москва</option>
+                <option>Санкт-Петербург</option>
+              </select>
+              <div class="invalid-feedback">
+                Please select a valid country.
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="state">&nbsp;</label>
+              <select class="custom-select d-block w-100" id="state" required="">
+                <option value="">+100 км</option>
+                <option>+200 км</option>
+              </select>
+              <div class="invalid-feedback">
+                Please provide a valid state.
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label class="control-label font-weight-bold" for="country">ПРЕДЛОЖЕНИЕ</label>
+              <select class="custom-select d-block w-100" id="country" required="">
+                <option value="">Актульные</option>
+                <option>Недавние (2 мес)</option>
+                <option>Недавние (3 мес)</option>
+                <option>Недавние (4 мес)</option>
+              </select>
+              <div class="invalid-feedback">
+                Please select a valid country.
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="state">&nbsp;</label>
+              <select class="custom-select d-block w-100" id="state" required="">
+                <option value="">Все продавцы</option>
+                <option>California</option>
+              </select>
+              <div class="invalid-feedback">
+                Please provide a valid state.
+              </div>
+            </div>
+          </div>
+
+          <div class="card text-white bg-primary mb-3">
+            <!-- <div class="card-header">Header</div> -->
+            <div class="card-body">
+              <h5 class="card-title">Сводка по рынку</h5>
+              <div class="row">
+                <div class="col">
+                  <div>Количиство авто</div>
+                  <p class="h3">5шт</p>
+                </div>
+                <div class="col">
+                  <div>Средняя цена</div>
+                  <p class="h3">854 000 р</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <div>Средний пробег</div>
+                  <p class="h3">70 000 км</p>
+                </div>
+                <div class="col">
+                  <div>Средний срок</div>
+                  <p class="h3">20 дней</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button> -->
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Тарифы -->
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <h1 class="display-4">Тарифы</h1>
+  <p class="lead">Тарифы представлены в рублях.</p>
+</div>
+
+<div class="container">
+  <div class="card-deck mb-3 text-center">
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">По месячный</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">{{monthPrice}} руб <small class="text-muted">/ мес</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>{{monthPrice * 12}} в год</li>
+          <li>Попробуйте наш сервис</li>
+          <li>&nbsp;</li>
+          <li>&nbsp;</li>
+        </ul>
+        <button type="button" class="btn btn-lg btn-block btn-warning">Стать клиентом</button>
+      </div>
+    </div>
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">На 6 месяцев</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">{{sixMonthPrice}} руб <small class="text-muted">/ мес</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>{{sixMonthPrice * 12}} рублей на 6 месяцев</li>
+          <li>Экономия {{monthPrice - sixMonthPrice}} руб в месяц и {{(monthPrice - sixMonthPrice) * 12}} в год</li>
+          <li><span class="text-danger">Скидка 25%</span> после 6 месяцев</li>
+          <li>&nbsp;</li>
+        </ul>
+        <button type="button" class="btn btn-lg btn-block btn-warning">Стать клиентом</button>
+      </div>
+    </div>
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">На 12 месяцев</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">{{yearPrice}} руб <small class="text-muted">/ мес</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>{{yearPrice * 12}} рублей в год</li>
+          <li>Экономия {{monthPrice - yearPrice}} руб. в месяц</li>
+          <li><span class="text-danger">Скидка 50%</span> после 12 месяцев</li>
+          <li><span class="text-danger">Скидка 25%</span> на новые услуги</li>
+        </ul>
+        <button type="button" class="btn btn-lg btn-block btn-block btn-warning">Стать клиентом</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br />
+<div class="container">
+  <div class="row">
+    <div class="col col-md-8 mx-auto">
+      <h2 class="lead display-4 text-center">Оставьте Ваши данные</h2>
+      <form class="border p-5 mt-3 mb-5" action="">
+        <div class="form-group">
+          <input type="email" class="form-control  form-control-lg" placeholder="Электронная почта">
+          <small class="text-center text-muted">Ваши данные не будут переданы 3-м лицам</small>
+        </div>
+        <button class="btn btn-lg btn-warning btn-block">Стать клиентом</button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<div [formGroup]="form">
+  <div formArrayName="phoneNumbers">
+    <label for="inputPassword4">Ваш телефон &nbsp;<span class="text-danger">*</span></label>
+    
+    <ng-container *ngFor="let phoneNumber of phoneNumbersForm.controls; let i=index">
+      <div class="form-group input-group ng-star-inserted">
+        <input 
+          class="form-control" 
+          [formControlName]="i" [class.is-invalid]="phoneNumber?.errors?.required && phoneNumber?.touched"
+          placeholder="+7(000)000-00-00" type="text">
+        <button class="btn btn-default input-group-addon" (click)="removePhoneField($event, i)"><i class="fa fa-trash"></i>
+        </button>
+      </div>
+      <p class="text-danger" *ngIf="phoneNumber?.errors?.required && phoneNumber?.touched">
+        Укажите номер или удалите поле.
+      </p>
+    </ng-container>
+
+    <button class="btn btn-primary" type="button" (click)="addPhoneField($event)">Добавить еще телефон</button>
+  </div>
+</div>

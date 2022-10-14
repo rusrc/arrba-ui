@@ -1,0 +1,27 @@
+<div class="d-none d-sm-block">
+  <div class="list-group" *ngIf="!phone">
+    <div (click)="showPhoneNumber($event)" class="list-group-item list-group-item-action flex-column align-items-start bg-info active"
+      [ngStyle]="{'cursor': 'pointer'}">
+      <div class="mb-1 h5">Показать телефон</div>
+    </div>
+  </div>
+  <div class="list-group" *ngIf="phone">
+    <a href="tel:{{phone?.number}}" class="list-group-item list-group-item-action flex-column align-items-start bg-info active">
+      <div class="mb-1 h5 text-white">{{phone?.number | mask: '+0(000) 000-00-00'}}</div>
+    </a>
+  </div>
+</div>
+
+<div class="d-block d-sm-none fixed-bottom text-center">
+  <div class="list-group" *ngIf="!phone">
+    <div (click)="showPhoneNumber($event)" class="list-group-item list-group-item-action flex-column align-items-start bg-info active"
+      [ngStyle]="{'cursor': 'pointer'}">
+      <div class="mb-1 h3">Показать телефон</div>
+    </div>
+  </div>
+  <div class="list-group" *ngIf="phone">
+    <a href="tel:{{phone?.number}}" class="list-group-item list-group-item-action flex-column align-items-start bg-info active">
+      <div class="mb-1 h2 text-white">{{phone?.number | mask: '+0(000) 000-00-00'}}</div>
+    </a>
+  </div>
+</div>

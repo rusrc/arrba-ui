@@ -1,0 +1,30 @@
+<!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
+<div *ngIf="index === 2">
+  <!-- insite-new-rekl -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-format="fluid"
+       data-ad-layout-key="-g2+t-4t-98+zf"
+       data-ad-client="ca-pub-2973524994939741"
+       data-ad-slot="9404492472"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+<article role="article">
+  <div class="row pt-2 pb-2">
+    <div class="col-lg-5 col-lg-5 col-md-5 col-sm-6 d-none d-lg-block">
+      <a target="blank" href="{{item?.link}}">
+        <img class="img-fluid rounded" src="{{item?.thumbnail}}" alt="">
+      </a>
+    </div>
+    <div class="col-lg-7 col-md-12 ccol-md-12 col-sm-12">
+      <a target="blank" href="{{item?.link}}" rel="nofollow" >
+        {{item?.description}} </a>
+      <div class="text-muted">
+        <small>{{item?.date | amDateFormat: 'YYYY-MM-DD'}}</small>
+      </div>
+    </div>
+  </div>
+</article>

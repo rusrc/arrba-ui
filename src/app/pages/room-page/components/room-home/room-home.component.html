@@ -1,0 +1,59 @@
+<app-breadcrumb [routes]="breadcrumbRoutes"></app-breadcrumb>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <app-select-inline-status [items]="mainFilterItems | async" [queryParams]="queryParams">
+      </app-select-inline-status>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <app-select-inline-filter [items]="categoryFilterItems | async" [queryParams]="queryParams">
+      </app-select-inline-filter>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <ng-container *ngIf="adVehicles$ | async as adVehicles">
+      <div class="col-8">
+        <div class="row">
+          <div class="col-8">
+            <app-pagination [page]="paged" [queryParams]="queryParams"></app-pagination>
+          </div>
+          <div class="col-4">
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+              <label class="btn btn-secondary" [ngClass]="cardDisplayMode === 'inDetail' ? 'active': ''">
+                <input autocomplete="off" id="option1" name="options" type="radio"
+                  [attr.checked]="cardDisplayMode === 'inDetail'" (click)="onChange($event, 'inDetail')">
+                Подробно
+              </label>
+              <label class="btn btn-secondary" [ngClass]="cardDisplayMode === 'simple' ? 'active': ''">
+                <input autocomplete="off" id="option2" name="options" type="radio"
+                  [attr.checked]="cardDisplayMode === 'simple'" (click)="onChange($event, 'simple')">
+                Список
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="cardDisplayMode === 'simple'" class="col-8">
+        <div class="list-group" *ngFor="let adVehicle of adVehicles">
+          <a [routerLink]="['edit-image', adVehicle?.ID]"
+            class="mb-2 list-group-item list-group-item-action flex-column align-items-start">
+            <app-room-card-simple [item]="adVehicle"></app-room-card-simple>
+          </a>
+        </div>
+      </div>
+      <div class="row">
+        <ng-container *ngIf="cardDisplayMode === 'inDetail'">
+          <div class="col-12 col-sm-6 col-md-4" *ngFor="let adVehicle of adVehicles">
+            <app-room-card class="card mb-3" [adVehicle]="adVehicle"></app-room-card>
+          </div>
+        </ng-container>
+      </div>
+      <div class="col-12">
+        <app-pagination [page]="paged" [queryParams]="queryParams"></app-pagination>
+      </div>
+    </ng-container>
+  </div>
+</div>

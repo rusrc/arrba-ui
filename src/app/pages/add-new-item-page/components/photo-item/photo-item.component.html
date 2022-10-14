@@ -1,0 +1,34 @@
+<div class="col-12 card p-0 border-0 bg-transparent d-inline-block ng-star-inserted">
+  <section class="card p-2 mb-2 bg-transparent">
+    <div class="row no-gutters">
+      <div class="col-3 col-sm-2">
+        <a href="#">
+          <img [src]="src" class="card-img-top img-fluid rounded">
+        </a>
+      </div>
+      <div class="col-9 col-sm-10">
+        <div class="card-body">
+          <div class="d-flex w-100 justify-content-between">
+            <div class="d-sm-block d-none">
+              <h2 class="h5">{{fileName}}</h2>
+              <p>{{fileSize}}</p>
+            </div>
+            <div class="text-success text-nowrap">
+              <button class="btn btn-block btn-danger" (click)="onDelete(fileName)">Удалить</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" aria-valuenow="percentage" aria-valuemin="0"
+            aria-valuemax="percentage" [ngStyle]="{'width': percentage + '%'}">
+            {{percentage}}%
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

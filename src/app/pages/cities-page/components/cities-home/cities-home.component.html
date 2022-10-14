@@ -1,0 +1,15 @@
+<app-breadcrumb [routes]="breadcrumbRoutes"></app-breadcrumb>
+<div class="container">
+  <div class="row">
+    <div class="col mb-3">
+      <h1 class="h3 text-muted">{{titleTag}}</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col" *ngFor="let cities of cityMatrix">
+      <p *ngFor="let city of cities">
+        <a [routerLink]="['/', 'cities', city.Alias]" (click)="cityOnSelected($event, city)">{{city?.Name}}</a>
+      </p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<section class="bg-light" [@showState]="showState">
+  <div class="container">
+    <div class="form-row">
+      <div class="col-md-4 col-lg-3 form-group" *ngFor="let property of properties">
+        <ng-container [ngSwitch]="property?.ControlType">
+          <app-select *ngSwitchCase="'Select'" [form]="form" [property]="property"
+            (changedValue)="onChangedValue($event)"></app-select>
+          <app-value *ngSwitchCase="'Value' || 'ValueFromTo'" [noTitle]="true" [form]="form" [property]="property"
+            [placeHolder]="'Не более'" (changedValue)="onChangedValue($event)"></app-value>
+        </ng-container>
+      </div>
+    </div>
+    <!-- Check boxes only-->
+    <div class="btn-group-toggle d-inline-flex pt-1 pb-1" data-toggle="buttons" *ngFor="let property of properties">
+      <app-check-box-button *ngIf="property?.ControlType === 'CheckBox'" [form]="form" [property]="property"
+        [active]="property === selectedCheckBox" (changedValue)="onChangedValue($event)"></app-check-box-button>
+    </div>
+    <div class="form-row">
+      <div class="col pt-4 pb-2">
+        <button type="submit" class="btn btn-warning btn-block"><i class="fas fa-search"></i>
+          Найти</button>
+      </div>
+    </div>
+  </div>
+</section>

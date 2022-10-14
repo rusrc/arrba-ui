@@ -1,0 +1,8 @@
+<a href="#" class="d-inline-block rounded p-2 mr-2 mb-2" 
+(click)="onClick($event, item)" 
+[ngClass]="{
+    'bg-dark text-light': item?.Key === activeItem,
+    'bg-light text-dark': item?.Key !== activeItem
+}"
+[routerLink]="['/', 'room']" [queryParams]="getQueryParams(item?.Key)"
+*ngFor="let item of items">{{getTitle(item?.Key)}} <span class="badge badge-dark">{{item?.Value}}</span></a>

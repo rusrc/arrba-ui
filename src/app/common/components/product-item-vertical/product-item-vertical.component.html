@@ -1,0 +1,21 @@
+<div class="card">
+  <a [routerLink]="['/obyavlenie', productItem?.ID]">
+    <img class="card-img-top p-2 img-fluid _img-thumbnail mx-auto" onerror="this.src='http://arrba.azurewebsites.net/Content/Imgs/no_img1.jpg'"
+      src="{{ 'http://arrba.azurewebsites.net/' +  productItem?.MainImgMiddle }}" alt="{{ productItem?.Title }} '{{ productItem?.Year }}">
+  </a>
+  <div class="card-body">
+    <h5 class="card-title">
+      <a [routerLink]="['/obyavlenie', productItem?.ID]"><span class="text-success">{{ productItem?.ConvertedPrice
+          }} {{ productItem?.CurrencySymbol }}</span>
+        {{ productItem?.Title }} '{{ productItem?.Year }}</a>
+    </h5>
+    <p class="card-text">{{ productItem?.ShortDescription }}</p>
+    <p class="card-text">
+      <small class="text-muted pr-1 d-block"><i class="fa fa-map-marker"></i>&nbsp;г. {{ productItem?.CityNameMultiLang
+        }}</small>
+      <small class="text-muted pr-1 d-block"><i class="fa fa-eye"></i>&nbsp;{{ productItem?.ViewCount }} Просмотра</small>
+      <small class="text-dark d-block"><i class="fa fa-star"></i>&nbsp;<i class="fa fa-envelope"></i>&nbsp;{{
+        productItem?.AddDate | amDateFormat: 'YYYY-MM-DD' }}</small>
+    </p>
+  </div>
+</div>

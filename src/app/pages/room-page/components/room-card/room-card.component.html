@@ -1,0 +1,39 @@
+<!-- <div class="card"> -->
+<div class="card-header bg-transparent">
+  <app-room-card-price [adVehicle]="adVehicle"></app-room-card-price>
+</div>
+<div class="list-group">
+  <a [routerLink]="['/obyavlenie', adVehicle?.ID]" class="list-group-item list-group-item-action flex-column align-items-start _active">
+    <div class="d-flex w-100 justify-content-between">
+      <h1 class="mb-1 h5">{{adVehicle?.Title || 'No title'}} '{{adVehicle?.Year}}</h1>
+      <span class="text-muted text-nowrap"><i class="fa fa-eye"></i> {{adVehicle?.ViewCount}}</span>
+    </div>
+    <!-- <p class="mb-1">Нажмите, чтобы посмотреть на сайте</p> -->
+    <small *ngIf="!isExpired()" class="text-danger">Объявление истекает через: {{getExpirationDays()}} дней</small>
+    <small *ngIf="isExpired()" class="text-danger">Объявление истекло</small>
+  </a>
+</div>
+<a [routerLink]="['edit-image', adVehicle?.ID]" class="position-relative">
+  <img class="card-img-top" *ngIf="mainImg" src="{{mainImg}}" alt="{{adVehicle?.Title}}" onerror="this.src='http://arrba.azurewebsites.net/Content/Imgs/no_img1.jpg'">
+  <p class="position-absolute" style="top: 10px;right: 5%;"><i class="fa fa-edit"></i></p>
+</a>
+<app-room-card-description [adVehicle]="adVehicle"></app-room-card-description>
+<ul class="list-group list-group-flush">
+  <li class="list-group-item">
+    <i class="fa fa-calendar"></i> Добавлено: {{adVehicle?.AddDate | amDateFormat: 'YYYY-MM-DD'}}</li>
+  <li class="list-group-item _text-info">
+    <i class="fa fa-calendar"></i> Активно до: {{adVehicle?.DateExpired | amDateFormat: 'YYYY-MM-DD'}}
+  </li>
+</ul>
+<!-- <app-room-paid-service-list></app-room-paid-service-list> -->
+<div class="card-body">
+  <p>
+    <a href="#" (click)="inArchive($event)" class="card-link text-danger">Удалить объявление</a>
+  </p>
+  <!-- <small class="card-text">
+      Внимание! Объявление будет перемещено в архив. При желании Вы можете восстановить его
+      из
+      личного кабинета.
+    </small> -->
+</div>
+<!-- </div> -->

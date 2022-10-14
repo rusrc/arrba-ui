@@ -1,0 +1,12 @@
+<div (click)="makeEditable()">
+  <div (clickOutside)="onClickOutside($event)">
+    <div class="w-100 justify-content-between" [ngClass]="!isEditable?'d-flex': 'd-none'">
+      <h4 class="text-success">{{adVehicle?.Price | number: '1.0-0' }} {{adVehicle?.CurrencySymbol}}</h4>
+      <a href="#" class="text-muted"><i class="fa fa-edit"></i></a>
+    </div>
+    <div class="form-group">
+      <input class="form-control" (change)="onChange($event.target.value)" [ngClass]="isEditable?'d-block': 'd-none'"
+        [value]="adVehicle?.Price">
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<figure class="card border-0" role="img">
+  <img class="card-img-top d-sm-block" [ngClass]="{'d-none': images?.length > 1}" [src]="getMainImage()?.thumb"
+    onerror="this.src='http://arrba.azurewebsites.net/Content/Imgs/no_img1.jpg'" (click)="open(getMainImage()?.index)"
+    [alt]="imageTitle">
+
+  <ng-container *ngIf="images?.length > 1">
+    <div class="card-group" *ngFor="let images of getMatrix(getImages())">
+      <div class="card" *ngFor="let image of images">
+        <!-- onerror="this.src='http://arrba.azurewebsites.net/Content/Imgs/no_img1.jpg'" -->
+        <img class="card-img-top" (click)="open(image?.index)" [src]="image?.thumb" [alt]="imageTitle">
+      </div>
+    </div>
+  </ng-container>
+</figure>

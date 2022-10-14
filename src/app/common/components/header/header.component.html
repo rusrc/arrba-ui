@@ -1,0 +1,89 @@
+<ng-progress></ng-progress>
+<header>
+  <div class="pt-1 pb-1 mb-0 jumbotron _bg-light">
+    <div class="container">
+      <div class="d-flex flex-column flex-md-row align-items-center">
+        <div class="my-2 my-md-0 mr-md-auto font-weight-normal">
+          <span>
+            <app-city-dialog-window></app-city-dialog-window>
+          </span>
+        </div>
+        <div class="my-2 my-md-0 custom-control custom-switch p-2">
+          <input type="checkbox" (click)="switchTheme()" class="custom-control-input" id="cSwitch">
+          <label class="custom-control-label" for="cSwitch">{{theme === 'darkly'? 'Свет': 'Тьма'}}</label>
+        </div>
+        <a class="my-2 my-md-0 btn btn-warning" routerLink="add-new-item">Продать <i class="fa fa-pluse"></i></a>
+        <nav class="my-2 my-md-0" *ngIf="!isAuthorized">
+          <a class="pl-3" routerLink="login"><i class="fas fa-sign-in-alt"></i> Войти</a>
+          <a class="pl-3" routerLink="register"><i class="fas fa-key"></i> Регистрация</a>
+        </nav>
+        <nav class="my-2 my-md-0" *ngIf="isAuthorized">
+          <ng-container *ngIf="profile$ | async as profile; else profileLoading">
+            <a class="pl-3" routerLink="room">Профиль: {{profile.userName}}</a>
+          </ng-container>
+          <ng-template #profileLoading>
+            <a class="pl-3" routerLink="room">Профиль: Loading...</a>
+          </ng-template>
+          <a class="pl-3" routerLink="" (click)="logout($event)"><i class="fas fa-key"></i> Выход</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container pt-1 pb-1">
+      <a class="navbar-brand font-weight-bold" routerLink="/">ARRBA</a>
+      <a class="navbar-brand m-0" href="#"></a>
+      <button class="navbar-toggler" (click)="toggleMenu()" type="button" data-toggle="collapse"
+        data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse" [class.show]="showMenu">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item" *ngIf="!SuperCategories">
+            <a class="nav-link">
+              Loading...
+            </a>
+          </li>
+          <ng-container *ngFor="let superCategory of SuperCategories">
+            <li class="nav-item text-muted" [class.active]="superCategory?.IsActive">
+              <a class="nav-link pt-2 pb-2 pl-0 pl-sm-3" href="/categories?superCategoryId={{superCategory?.ID}}"
+                (click)="goToSuperCategory($event, superCategory)">
+                {{superCategory?.Name}}
+              </a>
+            </li>
+          </ng-container>
+        </ul>
+        <div class="text-secondary d-none d-lg-block">
+          <span class="badge badge-info">бесплатные объявления</span>
+          <!-- 1500 <span class="badge badge-light">объявлений</span> -->
+        </div>
+      </div>
+    </div>
+  </nav>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark pt-0 pt-lg-2 d-none d-lg-block" [class.d-block]="showMenu"
+    #anchor2>
+    <div class="container pt-1 pb-1">
+      <div class="row">
+        <div class="col">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item" *ngIf="!SuperCategories">
+              <a class="nav-link pl-0">Loading...</a>
+            </li>
+            <ng-container *ngFor="let category of Categories; let i = index">
+              <li class="nav-item" [class.active]="category?.IsActive" *ngIf="i < countOfItemsDisplayedOnMenu">
+                <a class="nav-link text-light pt-2 pb-2 pl-0 pl-sm-3 text-capitalize"
+                  [routerLink]="getRouterLink(category)" [class.pl-lg-0]="i === 0"
+                  (click)="goToSubCategory($event, category, anchor2)">
+                  {{category?.Name}}
+                </a>
+              </li>
+            </ng-container>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<app-search-filter (submit)="scrollToAnchor1(anchor1)" [showState]="showFilter"></app-search-filter>
+<div #anchor1></div>

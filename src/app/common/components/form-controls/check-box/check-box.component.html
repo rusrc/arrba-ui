@@ -1,0 +1,10 @@
+<div class="form-group" [formGroup]="form">
+  <div class="custom-control custom-checkbox pb-1">
+    <input [formControl]="control" [attr.checked]="isChecked" type="checkbox" class="custom-control-input" [id]="property?.PropertyName"
+      (change)="changeValue($event.target.value, property)">
+    <label class="custom-control-label" [for]="property?.PropertyName">{{property?.PropertyDescription ||
+      property?.PropertyName}}
+      <a *ngIf="link" href="{{link}}">{{linkText}}</a>
+    </label>
+  </div>
+</div>

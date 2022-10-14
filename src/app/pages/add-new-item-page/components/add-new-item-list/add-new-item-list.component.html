@@ -1,0 +1,22 @@
+<app-breadcrumb [routes]="breadcrumbRoutes"></app-breadcrumb>
+<section class="container">
+  <div class="row">
+    <div class="col">
+      <h1 class="h2">Выберите категорию</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-8 col-md-8" *ngIf="(categories$ | async) as categories">
+      <div class="row mb-1">
+        <div class="col-12">
+          <div class="list-group list-group-flush" *ngFor="let category of sort(categories)">
+            <a [routerLink]="['/add-new-item', category?.ID]" class="list-group-item list-group-item-action _pl-0 text-capitalize">{{category?.Name}}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-4">
+      <app-banner></app-banner>
+    </div>
+  </div>
+</section>

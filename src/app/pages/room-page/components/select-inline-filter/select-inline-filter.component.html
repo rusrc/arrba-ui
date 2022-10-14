@@ -1,0 +1,9 @@
+<a class="d-inline-block rounded p-2 mr-2 mb-2" 
+(click)="onSelect($event, item?.CategoryId)"
+[ngClass]="{
+  'bg-dark text-light': item?.CategoryId === categoryIdSelected,
+  'bg-light text-dark': item?.CategoryId !== categoryIdSelected
+}"
+[routerLink]="['/', 'room']"
+[queryParams]="getQueryParams(item?.CategoryId, item?.Value)"
+*ngFor="let item of items">{{item?.Key}} <span class="badge badge-dark">{{item?.Value}}</span></a>

@@ -1,0 +1,61 @@
+<app-breadcrumb [routes]="[{key:'главная', value:'/'}, {key: 'регистрация', value:'/'}]"></app-breadcrumb>
+<div class="container pb-3 pt-3">
+  <div class="row justify-content-md-center">
+    <div class="col-12 col-md-8 col-lg-6 align-self-center">
+      <form class="p-5 jumbotron" [formGroup]="form" (ngSubmit)="onSubmit()">
+        <fieldset>
+          <h1 class="h5 mb-4">Зарегистрируйтесь или
+            <a class="text-info" routerLink="/login">войдите</a>
+          </h1>
+        </fieldset>
+        <div class="form-group">
+          <app-value [form]="form" [property]="email" [required]="true" [placeHolder]="'Ваш email'"
+            [controlType]="'text'" [noTitle]="true"></app-value>
+          <small id="emailHelp" class="form-text text-muted">Ваш email не будет использован третьими лицами.</small>
+        </div>
+        <div class="form-group">
+          <div class="input-group">
+            <input type="{{passwordTypeToggle}}" [formControlName]="'password'" class="form-control"
+              placeholder="Пароль" aria-label="Пароль" aria-describedby="button-addon2">
+            <div class="input-group-append">
+              <button class="btn btn-outline-warning" type="button" id="button-addon2" (click)="onTogglePassword()">
+                <i *ngIf="passwordTypeToggle === 'text'" class="fa fa-eye"></i>
+                <i *ngIf="passwordTypeToggle === 'password'" class="fa fa-eye-slash"></i>
+              </button>
+            </div>
+          </div>
+          <!-- <app-value [form]="form" [property]="password" [required]="true" [placeHolder]="'Введите пароль'"
+            [controlType]="'password'"></app-value> -->
+        </div>
+        <!-- <div class="form-group">
+          <app-value [form]="form" [property]="repeatPassword" [required]="true" [placeHolder]="'Повторите пароль'"
+            [controlType]="'password'"></app-value>
+        </div> -->
+        <!-- <div class="form-group">
+          <app-check-box [form]="form" [property]="ruleAgree" [link]="'#'" [linkText]="'правила'"></app-check-box>
+        </div> -->
+        <div class="form-group">
+          <!-- <label for="">
+            Пожалуйста поддтвердите, что вы не робот или <a routerLink="/login">авторизуйтесь</a>, <a routerLink="/register">зарегистрируйтесь</a>
+          </label> -->
+          <re-captcha (resolved)="resolvedCaptcha($event)" [siteKey]="siteKey" [theme]="'dark'"></re-captcha>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-warning btn-lg">Зарегистрироваться</button>
+        </div>
+        <p class="form-group">
+          <small class="text-muted">
+            Авторизуясь на сайте, я принимаю условия <a [routerLink]="['/', 'information', 'contranct']"
+              _target="_blank">пользовательского
+              соглашения</a> и даю согласие на обработку
+            персональных данных в соответствии с законодательством России и
+            <a [routerLink]="['/', 'information', 'contranct']" target="_blank">пользовательским соглашением.</a>
+          </small>
+        </p>
+        <div class="form-group">
+          <span class="text-danger">{{error}}</span>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

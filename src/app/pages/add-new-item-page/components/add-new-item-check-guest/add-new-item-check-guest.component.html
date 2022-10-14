@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 col-md-12">
+      <br />
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="">
+            Пожалуйста поддтвердите, что вы не робот или <a routerLink="/login">авторизуйтесь</a>, <a routerLink="/register">зарегистрируйтесь</a>
+          </label>
+          <re-captcha (resolved)="resolvedCaptcha($event)" [siteKey]="siteKey"></re-captcha>
+        </div>
+        <div>
+           <app-error-message></app-error-message>
+        </div>
+      </form>
+      <br />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<div role="banner" *ngIf="disable == false">
+  <ngb-carousel class="mt-3" *ngIf="images">
+    <ng-template ngbSlide *ngFor="let image of images; let i = index">
+      <img [src]="image" alt="Random slide {{i}}">
+      <div class="carousel-caption">
+        <h3>ARRBA.RU</h3>
+        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+      </div>
+    </ng-template>
+  </ngb-carousel>
+</div>

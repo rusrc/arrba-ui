@@ -1,0 +1,74 @@
+<form [@showFilterState]="showState" [formGroup]="form" (ngSubmit)="onSubmit()">
+  <ng-container *ngIf="data$ | async as data">
+    <section class="pl-0 pr-0 pt-0 pb-2 mb-0 jumbotron">
+      <div class="bg-warning p-1"></div>
+      <div class="container alert">
+        <button class="close" (click)="hideFilter($event)" type="button" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="row">
+              <div class="col-12 align-self-center pb-4">
+                <app-ctr-links [form]="form" [blockName]="'Тип'" [property]="data.itemType" [typeOfItems]="'ItemType'">
+                </app-ctr-links>
+              </div>
+              <div class="col-12 align-self-center pb-4">
+                <app-ctr-links [form]="form" [blockName]="'Бренд'" [property]="data.itemBrand" [typeOfItems]="'BrandType'">
+                </app-ctr-links>
+              </div>
+              <div class="col-12 align-self-center pb-4">
+                <app-ctr-links [form]="form" [blockName]="'Модель'" [property]="data.itemModel" [typeOfItems]="'ModelType'">
+                </app-ctr-links>
+              </div>
+              <!-- <div class="col-12 align-self-center pb-4">
+                <app-ctr-links [form]="form" [blockName]="'Частые города'" [property]="itemCity" [typeOfItems]="'CityType'"></app-ctr-links>
+              </div> -->
+            </div>
+          </div>
+          <div class="col-lg-4 pt-2">
+            <app-from-to-text-input [form]="form" [from]="data.priceFrom" [to]="data.priceTo" [fromPlaceHolder]="'Цена от'"
+              [toPlaceHolder]="'до'" [nestedSelectProperty]="data.currency" [title]="'Цена'"
+              (changedValue)="onChangedValue($event)"></app-from-to-text-input>
+            <app-from-to-text-input [form]="form" [from]="data.yearFrom" [to]="data.yearTo" [fromPlaceHolder]="'Год от'"
+              [toPlaceHolder]="'до'" (changedValue)="onChangedValue($event)"></app-from-to-text-input>
+            <app-select [form]="form" [property]="data.vehicleCondition" (changedValue)="onChangedValue($event)">
+            </app-select>
+          </div>
+          <div class="col-lg-2 pt-2">
+            <app-check-box [form]="form" [property]="data.hasPhoto" (changedValue)="onChangedValue($event)"></app-check-box>
+            <app-check-box [form]="form" [property]="data.hotSelling" (changedValue)="onChangedValue($event)">
+            </app-check-box>
+            <app-check-box [form]="form" [property]="data.customsCleared" (changedValue)="onChangedValue($event)">
+            </app-check-box>
+            <app-check-box [form]="form" [property]="data.instalmentSelling" (changedValue)="onChangedValue($event)">
+            </app-check-box>
+            <app-check-box [form]="form" [property]="data.exchangePossible" (changedValue)="onChangedValue($event)">
+            </app-check-box>
+          </div>
+        </div>
+        <div class="row pt-3 pb-3">
+          <div class="col-md-5 col-lg-4">
+            <a href="#" *ngIf="properties?.length" (click)="toggleAdvanceFilterDisplay($event)">
+              Расширеный поиск
+              <i [ngClass]="showFilterAdvancedState === 'inactive' ? 'fa-angle-down': 'fa-angle-up'"
+                class="fa fa-angle-down"></i>
+            </a>
+          </div>
+          <div class="col-md-3 col-lg-3 offset-md-4 offset-lg-5 mt-1 mt-sm-0">
+            <button class="btn btn-warning btn-block" [class.d-none]="showFilterAdvancedState === 'active'"
+              type="submit"><i class="fas fa-search"></i>
+              Найти</button>
+          </div>
+        </div>
+      </div>
+
+    </section>
+    <app-search-filter-adv *ngIf="properties?.length" [form]="form" [showState]="showFilterAdvancedState"
+      [properties]="data.properties">
+    </app-search-filter-adv>
+
+  </ng-container>
+</form>

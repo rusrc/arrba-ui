@@ -1,0 +1,92 @@
+<footer class="mt-3" role="contentinfo">
+  <div class="pt-1 pb-2 mb-0 jumbotron">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <nav class="pt-3 pb-3 navbar navbar-expand-lg navbar-light p-0">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link pl-0 pr-3" [routerLink]="['/', 'information', 'about']">О проекте</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link pl-0 pr-3" [routerLink]="['/', 'information', 'collaboration']">Сотрудничество</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-danger pl-0 pr-3" [routerLink]="['/', 'information', 'for-dealers']">Автосалонам
+                  и
+                  дилерам</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link pl-0 pr-3" [routerLink]="['/', 'dealers']">Дилеры</a>
+              </li>  
+              <!-- <li class="nav-item">
+                <a class="nav-link text-danger pl-0 pr-3" [routerLink]="['/', 'information', 'sto']">Автосервисам</a>
+              </li> -->
+              <li class="nav-item">
+                <a class="nav-link pl-0 pr-3" [routerLink]="['information', 'contranct']">Договор оферты</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link pl-0 pr-3" [routerLink]="['information', 'contacts']">Контакты (Обратная связь)</a>
+              </li>
+            </ul>
+            <!-- <form class="form-inline my-2 my-md-0">
+              <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+            </form> -->
+          </nav>
+        </div>
+      </div>
+      <div class="row text-muted" *ngIf="cities">
+        <div class="col-12 col-md-3" *ngFor="let citiesArray of getMatrix(cities)">
+          <div class="list-group list-group-flush" *ngFor="let city of citiesArray">
+            <a [routerLink]="['cities', city?.Alias]" class="list-group-item list-group-item-action bg-transparent pl-0">{{city?.Name}}</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="row text-muted pt-3 pb-3">
+        <p class="col-12 col-md-4">
+          Аррба.ру — сайт в российском интернете, ориентированный на продажу или покупку автомобилей и техники,
+          как коммерческого, так и частного транспорта
+        </p>
+        <p class="col-12 col-md-4">
+          На сайте обширная база объявлений о продаже разных видов транспортных средств от автомобилей
+          до скутеров с велосипедами
+        </p>
+        <p class="col-12 col-md-4">
+          У нас большой выбор легковых автомобилей, грузового и коммерческого транспорта, мототехники,
+          скутеров и мопедов, спецтехники, квадроциклов
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="bg-warning">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-12 col-md-5 pt-3 pb-3">
+          <span class="font-weight-bold text-white"> <i class="fa fa-copyright"></i> {{currentYear}} ARRBA.RU</span>
+        </div>
+        <div class="col"></div>
+        <div class="col-12 col-md-2 order-last">
+          <a href="#" class="text-white pr-3">
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a href="#" class="text-white pr-3">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" class="text-white pr-3">
+            <i class="fab fa-vk"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="bg-light _bg-dark p-3">
+    <div class="container">
+      <div class="row">
+        <small class="col text-white">
+          {{description}}
+        </small>
+      </div>
+    </div>
+  </div> -->
+</footer>

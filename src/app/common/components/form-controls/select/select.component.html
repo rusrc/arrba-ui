@@ -1,0 +1,23 @@
+<ng-container [formGroup]="form" [ngSwitch]="multiple">
+
+  <ng-container *ngSwitchCase="true">
+    <label *ngIf="property?.PropertyDescription">{{property?.PropertyDescription}}</label>
+    <select class="form-control text-muted" [attr.multiple]="multiple" [attr.disabled]="disabled?'true':null"
+      id="" size="10" [formControl]="control" (change)="onChange($event, property)">
+      <option class="text-dark" *ngFor="let option of property?.SelectOptions" [value]="option?.ID">{{option?.Name}}</option>
+    </select>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="false">
+    <label *ngIf="noTitle && property?.PropertyDescription">{{property?.PropertyDescription}}</label>
+    <select class="border" [ngClass]="{
+        'border-0 bg-transparent': transparent,
+        'form-control': !transparent
+      }" [ngStyle]="{'color':'inherit'}"
+      [formControl]="control" (change)="onChange($event, property)">
+      <option *ngIf="!defaultValue" class="text-muted" [selected]="true" value="">{{property?.PropertyDescription}}</option>
+      <option class="text-dark font-weight-bold" *ngFor="let option of property?.SelectOptions" [value]="option?.ID">{{option?.Name}}</option>
+    </select>
+  </ng-container>
+
+</ng-container>

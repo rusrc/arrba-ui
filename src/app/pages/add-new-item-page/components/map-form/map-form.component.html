@@ -1,0 +1,38 @@
+<div class="map">
+
+  <div class="map__header" [formGroup]="form">
+    <div class="ctrLinks--unit">
+      <div class="row">
+        <div class="col-md-2">
+          <b>Страна</b>
+        </div>
+        <div class="col-md-5 ctrLinks--unit__ul-container">
+          <div class="ctrSelect">
+            <div class="ctrSelect__footer">
+              Россия
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ctrLinks--unit">
+      <div class="row">
+        <div class="col-md-2">
+          <b>Город</b>
+        </div>
+        <div class="col-md-5 ctrLinks--unit__ul-container">
+          <div class="ctrSelect">
+            <div class="ctrSelect__footer">
+              <app-select [form]="form" [property]="citySelectControl" [multiple]="false"></app-select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="map__body">
+    <div class="map__loader" id="map" style="height: 300px"></div>
+  </div> -->
+</div>

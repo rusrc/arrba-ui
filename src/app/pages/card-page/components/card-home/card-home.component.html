@@ -1,0 +1,142 @@
+<app-breadcrumb [routes]="breadcrumbRoutes"></app-breadcrumb>
+
+<!--Error message-->
+<app-error-message></app-error-message>
+
+<ng-template #vehicleLoading>
+  <div class="container">
+    <div class="row">
+      <div class="col">Loading...</div>
+    </div>
+  </div>
+</ng-template>
+<div class="container" *ngIf="vehicle; else vehicleLoading">
+  <app-json-ld [json]="json-ld"></app-json-ld>
+  <div class="row">
+    <div class="col-md-12">
+      <div *ngIf="vehicle?.IsExpired" class="alert alert-danger alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+            aria-hidden="true">×</span></button>
+        <strong>Внимание!</strong> Объявление устарело, но Вы можете поискать
+        <a [routerLink]="['/', 'categories', vehicle?.CategAlias, vehicle?.BrandName]">Похожие объявление</a>
+      </div>
+    </div>
+    <div class="col-lg-9 col-md-8 col-sm-12">
+      <div class="row">
+        <div class="col">
+          <div class="list-group mb-2">
+            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+              <div class="d-flex w-100 justify-content-between">
+                <h1 class="h4">
+                  {{vehicle?.Title}}
+                </h1>
+                <div class="h4 text-success">
+                  <ng-template #priceTpl>
+                    <s>
+                      {{vehicle?.Price | number: '1.0-0' }} {{vehicle?.PriceAbout}}
+                      {{vehicle?.ConvertedCurrencySymbol || vehicle?.CurrencySymbol }}
+                    </s>
+                  </ng-template>
+                  <b *ngIf="!vehicle?.MinimalPrice else priceTpl">
+                    {{vehicle?.Price | number: '1.0-0' }} {{vehicle?.PriceAbout}}
+                    {{vehicle?.ConvertedCurrencySymbol || vehicle?.CurrencySymbol }}
+                  </b>
+                </div>
+              </div>
+              <div *ngIf="vehicle?.MinimalPrice" class="d-flex w-100 justify-content-between">
+                <small class="text-muted d-block">Возможна скидка</small>
+                <div class="text-danger h5"><b>{{vehicle?.MinimalPrice | number: '1.0-0' }}
+                    {{vehicle?.CurrencySymbol}}</b></div>
+              </div>
+              <div class="d-flex w-100 justify-content-between">
+                <small class="text-muted d-block">{{vehicle?.AddDate | amDateFormat: 'YYYY-MM-DD'}}</small>
+                <small>{{vehicle?.OtherConvertedPrice}}</small>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-lg-8 d-block d-lg-none">
+          <app-card-image [images]="vehicle?.Images" [imagePath]="vehicle?.ImagePath"
+            [middleFileName]="vehicle?.MainImg" [imageTitle]="vehicle?.SeoTitle"></app-card-image>
+          <div class="card-body pl-0">
+            <a [routerLink]="['/', 'categories', vehicle?.CategAlias, vehicle?.BrandName]"
+              class="card-link btn btn-secondary">Похожие
+              объявления</a>
+          </div>
+        </div>
+        <div class="col-12 col-lg-4">
+          <div class="d-block">
+            <span class="p-2 mr-2 mb-1 bg-light rounded d-inline-block">
+              Просмотров <span class="badge badge-secondary">{{vehicle?.ViewCount}}</span>
+            </span>
+            <span class="p-2 mr-2 mb-1 bg-light rounded d-inline-block">
+              г. {{vehicle?.CityName}}
+            </span>
+          </div>
+          <br>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item _pl-0" *ngFor="let property of vehicle?.Properties">
+              {{property?.PropertyName}}: <b class="text-muted">{{property?.PropertyValue}}
+                {{property?.UnitMeasure}}</b></li>
+          </ul>
+          <br>
+          <app-card-phone-number (click)="showPhoneNumber($event)" [phone]="phone"></app-card-phone-number>
+          <br>
+
+          <div class="list-group mb-2" *ngIf="vehicle?.DealershipName">
+            <a class="list-group-item list-group-item-action flex-column align-items-start"
+              [routerLink]="['/','dealers', vehicle?.DealershipId]">
+              <h6 class="text-muted">Дилерский центр: </h6>
+              <p class="text-primary">"{{vehicle?.DealershipName}}"</p>
+            </a>
+          </div>
+
+        </div>
+        <div class="col-12 col-lg-8">
+          <div class="d-none d-lg-block">
+            <app-card-image [images]="vehicle?.Images" [imagePath]="vehicle?.ImagePath"
+              [middleFileName]="vehicle?.MainImg" [imageTitle]="vehicle?.SeoTitle"></app-card-image>
+            <div class="card-body pl-0 pt-2">
+              <a [routerLink]="['/', 'categories', vehicle?.CategAlias, vehicle?.BrandName]" class="card-link btn btn-info text-white">Похожие
+                объявления</a>
+            </div>
+          </div>
+          <div class="card-body pl-0 pt-2">
+            <small class="d-block text-muted pl-2">Поделиться с друзьями</small>
+            <!-- TODO Error: share-buttons on ssr side throw error `Cannot read property 'type' of undefined at TokenStream.LA, new ExpandButton` -->
+            <share-buttons *ngIf="isPlatfromBrowser" show="11"></share-buttons>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12" *ngIf="vehicle?.Description">
+          <div class="card mt-3 mb-3">
+            <div class="card-body">
+              <h5 class="card-title">Описание</h5>
+              <p class="card-text"> {{vehicle?.Description}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12" *ngIf="vehicle?.Comment">
+          <div class="card mt-3 mb-3">
+            <div class="card-body">
+              <h5 class="card-title">Коментарии владельца</h5>
+              <p class="card-text"> {{vehicle?.Comment}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-12">
+      <!-- <app-card-map *ngIf="isPlatfromBrowser" [lat]="lat" [lng]="lng"></app-card-map> -->
+      <aside class="aside">
+        <div class="aside__item">
+          <app-news-block></app-news-block>
+        </div>
+        <app-banner></app-banner>
+      </aside>
+    </div>
+  </div>
+</div>

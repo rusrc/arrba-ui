@@ -1,0 +1,57 @@
+<!-- <app-hot-block></app-hot-block> -->
+<app-breadcrumb [routes]="breadcrumbRoutes"></app-breadcrumb>
+<div class="container pt-3 pb-3" [ngSwitch]="cardDisplayMode">
+  <div class="row">
+    <div class="col-md-8 col-sm-12">
+      <div class="row">
+        <div class="col">
+          <h1 class="h5 text-muted">{{title.getTitle()}}</h1>
+        </div>
+      </div>
+      <div class="row pt-3 pb-3" *ngIf="page">
+        <div class="col-lg-8">
+          <app-pagination [page]="page" [routerLinkValue]="paginationRouteValue" [queryParams]="paginationQueryParams"></app-pagination>
+        </div>
+        <div class="col-lg-4 d-none d-lg-block">
+          <div class="btn-group btn-group-toggle float-lg-right" data-toggle="buttons">
+            <label class="btn btn-secondary" [ngClass]="cardDisplayMode === 'vertical' ? 'active': ''">
+              <input type="radio" name="options" id="option1" autocomplete="off" (click)="onChange($event, 'vertical')"
+                [attr.checked]="cardDisplayMode === 'vertical'"> Плитка
+            </label>
+            <label class="btn btn-secondary" [ngClass]="cardDisplayMode === 'horizontal' ? 'active': ''">
+              <input type="radio" name="options" id="option2" autocomplete="off" (click)="onChange($event, 'horizontal')"
+                [attr.checked]="cardDisplayMode === 'horizontal'"> Список
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!--Error message-->
+      <app-error-message></app-error-message>
+
+      <div class="card-columns mt-3" *ngSwitchCase="'vertical'">
+        <app-product-item-vertical *ngFor="let productItem of productItems" [productItem]="productItem"></app-product-item-vertical>
+      </div>
+      <ng-container *ngSwitchCase="'horizontal'">
+        <app-product-item *ngFor="let productItem of productItems; let i = index" [index]="index" [productItem]="productItem"></app-product-item>
+      </ng-container>
+
+      <div class="row" *ngIf="page">
+        <div class="col-lg-12">
+          <app-pagination [page]="page" [routerLinkValue]="paginationRouteValue"></app-pagination>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-md-4 col-sm-12 col-xs-12">
+      <aside class="aside">
+        <div class="aside__item">
+          <app-news-block></app-news-block>
+        </div>
+        <br />
+        <app-banner></app-banner>
+      </aside>
+    </div>
+  </div>
+</div>
+<br />

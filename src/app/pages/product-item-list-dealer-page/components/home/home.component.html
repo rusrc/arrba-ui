@@ -1,0 +1,66 @@
+<app-breadcrumb [routes]="breadcrumbRoutes"></app-breadcrumb>
+<div class="container">
+  <div class="row">
+    <div class="col-12" *ngIf="dealership$ | async as dealership">
+      <div class="card rounded-0">
+        <div class="card-header bg-transparent">
+          <h1 class="card-title h4">{{dealership?.Name}}</h1>
+          <div class="text-muted" *ngIf="dealership?.OfficialDealer">
+            Коммерческий транспорт у официального дилера
+          </div>
+        </div>
+        <div class="card-body row">
+          <!-- <div class="col-12 col-sm-4 col-md-2 d-none d-sm-block">
+            <img class="w-100 img-fluid" src="https://picsum.photos/200/150/" alt="Хендэ центр">
+          </div> -->
+          <div class="col-12 _col-sm-8 _col-md-10">
+            <div class="card-text">
+              <div class="d-md-flex justify-content-md-between">
+                <p>Автосалон</p>
+                <a href="tel:{{dealership?.PhoneNumber}}" rel="noindex">
+                  <p class="h5">{{dealership?.PhoneNumber | mask: '+0(000) 000-00-00'}}</p>
+                </a>
+              </div>
+              <p class="pt-3">
+                <small class="text-muted d-block">Время работы:</small>
+                <small class="text-muted d-block">ежедн. {{dealership?.SaWorkTime}}</small>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer text-muted bg-transparent">
+          <a href="#">{{dealership?.Address}}</a>
+          <p class="text-muted" *ngIf="dealership?.SubwayStations">{{dealership?.SubwayStations}}</p>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="col-12 mt-2">
+      <div class="card rounded-0">
+        <div class="card-body pt-2 pb-2">
+          <form class="form-inline">
+            <label class="sr-only" for="inlineFormInputName2">Name</label>
+            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+              <option selected>Сначала новые объявления</option>
+              <option value="1">Сначала старые объявления</option>
+              <option value="2">Сначала дешевые</option>
+              <option value="3">Сначала дорогие</option>
+            </select>
+            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+              <option selected>Руб</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </form>
+        </div>
+      </div>
+    </div> -->
+    <div class="col-12">
+      <ng-container *ngFor="let vehicle of vehicles">
+        <div class="p-1"></div>
+        <app-product-item [productItem]="vehicle"></app-product-item>
+      </ng-container>
+      <app-pagination [page]="page"></app-pagination>
+    </div>
+  </div>
+</div>

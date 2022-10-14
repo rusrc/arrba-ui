@@ -1,0 +1,25 @@
+<ng-container [formGroup]="form">
+  <div class="form-group">
+    <label *ngIf="title">
+      {{title}}: {{priceFromInput.value}} <span *ngIf="priceToInput?.value">-</span> {{priceToInput.value}}
+    </label>
+    <app-select *ngIf="nestedSelectProperty" 
+      [form]="form" 
+      [property]="nestedSelectProperty" 
+      [transparent]="true"
+      [defaultValue]="true"
+      (changedValue)="changeValue($event.value, $event.property)">
+    </app-select>
+    <!-- <input type="range" class="custom-range" id="formControlRange"> -->
+  </div>
+  <div class="form-row">
+    <div class="form-group col-6">
+      <input type="text" class="form-control" [placeholder]="fromPlaceHolder" #priceFromInput [id]="from?.PropertyName" [formControl]="fromControl"
+        (keyup)="changeValue($event.target.value, from)">
+    </div>
+    <div class="form-group col-6">
+      <input type="text" class="form-control" [placeholder]="toPlaceHolder" #priceToInput [id]="to?.PropertyName"
+        [formControl]="toControl" (keyup)="changeValue($event.target.value, to)">
+    </div>
+  </div>
+</ng-container>

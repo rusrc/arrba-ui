@@ -1,0 +1,45 @@
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Ваберите регион или <a href="#" (click)="onAllCities($event)">(все
+        города)</a></h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+
+    <a *ngFor="let mainCity of mainCities"
+      class="p-1 pr-3 pl-3 mr-2 mb-1 mt-1 d-inline-block rounded bg-light text-dark"
+      (click)="cityOnSelected($event, mainCity)" href="#">{{mainCity?.Name}}</a>
+
+    <ul class="nav nav-pills">
+      <li class="nav-item" *ngFor="let letter of letters">
+        <a class="nav-link" [class.active]="letter === selectedLetter" (click)="onSelectLetter($event, letter)"
+          href="#">{{letter}}</a>
+      </li>
+    </ul>
+    <div class="row p-2">
+      <div class="col-12 col-sm-6 col-lg-4" *ngFor="let cities of selectedCities">
+        <div class="list-group list-group-flush">
+          <a *ngFor="let city of cities" [routerLink]="['cities', city?.Alias]"
+            class="list-group-item list-group-item-action"
+            [ngClass]="{'bg-primary text-white rounded': selectedCity === city}"
+            (click)="cityOnSelected($event, city)">{{city?.Name}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+  </div> -->
+</ng-template>
+
+<a href="cities" (click)="open($event, content)">
+  <i class="fa fa-map-marker-alt"></i>&nbsp;
+  <span *ngIf="selectedCity; else noRegion">
+    {{countryName}}, г. {{selectedCity?.Name}}
+  </span>
+  <ng-template #noRegion>
+    Выберите регион
+  </ng-template>
+</a>

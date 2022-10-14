@@ -1,0 +1,148 @@
+<ul class="list-group list-group-flush">
+  <li class="list-group-item _list-group-item-light d-flex w-100 justify-content-between" (click)="toggle($event)">
+    <h5 class="text-muted">СЕРВИСЫ</h5>
+    <a class="text-dark" href="#"><i class="fa" [ngClass]="showState=== 'inactive'? 'fa-angle-down': 'fa-angle-up'"></i></a>
+  </li>
+  <li class="list-group-item _d-none" [@showHideState]="showState">
+    <div> <i class="fa fa-clock-o"></i> Ваше объявление проживет на сайте 7 дней с момента
+      продления. При проделнии можно обнулять количество просмотров объявления.
+    </div>
+    <br>
+    <div class="form-group">
+      <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" id="customCheck1">
+        <label class="custom-control-label" for="customCheck1">Сбросить просмотры</label>
+      </div>
+    </div>
+    <a class="btn btn-warning btn-block">Продлить </a>
+  </li>
+</ul>
+
+
+<!-- <div class="service-block">
+      <i class="fa fa-clock-o service-block__icon"></i>
+      <p class="service-block__desc">
+        Ваше объявление проживет на сайте 7 дней с момента продления. При проделнии можно обнулять количество
+        просмотров объявления.
+      </p>
+      <br>
+      <div class="ctrCheckbox--unit__item">
+        <input type="checkbox" id="c13" name="cc">
+        <label for="c13">
+          <span></span>
+          <b class="ctrCheckbox--unit__title">Сбросить просмотры
+            <i class="fa fa-question-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="Если проставлена галочка, то при нажатии на 'продлить' просмотры обнуляются"></i>
+          </b>
+        </label>
+      </div>
+      <a href="addNewAd.html" class="btn btn-warning btn-block">
+        Продлить
+      </a>
+    </div>
+
+     <div class="service-block">
+        <i class="fa fa-rocket service-block__icon"></i>
+        <div class="service-block__wrapper">
+          <p class="service-block__msg">
+            Последний раз поднималось 17.05.2016 18:16
+          </p>
+          <p class="service-block__desc">
+            Ваше объявление поднимается наверх до конца дня и будет уступать только объявлениям, которые
+            добавлены позже
+          </p>
+          <br>
+          <div class="service-block__btn">
+            <a href="addNewAd.html" class="b-btn b-btn--blue">
+              Поднять
+            </a>
+          </div>
+          <div class="service-block__price">10 ед.</div>
+        </div>
+      </div> -->
+
+<!-- <div class="service-block">
+        <i class="fa fa-fire service-block__icon"></i>
+        <div class="service-block__wrapper">
+          <p class="service-block__msg">
+            Активно до 17.05.2016 18:16
+          </p>
+          <p class="service-block__desc">
+            Ваше объявление поднимается наверх до конца дня и будет уступать только объявлениям, которые
+            добавлены позже
+          </p>
+          <br>
+          <div class="service-block__btn">
+            <a href="addNewAd.html" class="b-btn b-btn--blue">
+              В горячие
+            </a>
+          </div>
+          <div class="service-block__price">10 ед.</div>
+        </div>
+      </div> -->
+
+<!-- <div class="col-lg-12 col-md-12 col-sm-6 user-unit__item-body-right-col">
+      <div class="service-block">
+        <i class="fa fa-warning service-block__icon"></i>
+        <div class="service-block__wrapper">
+          <p class="service-block__desc">
+            Ваше объявление украсит флажок со словами
+            <span class="productItem__hot">
+              Срочно, торг
+            </span>. Так легче привлечь внимание покупателей.
+          </p>
+          <br>
+          <div class="service-block__btn">
+            <a href="addNewAd.html" class="b-btn b-btn--blue">
+              Добавить
+            </a>
+          </div>
+          <div class="service-block__price">10 ед.</div>
+        </div>
+      </div>
+      <div class="service-block">
+        <i class="fa fa-fire service-block__icon"></i>
+        <div class="service-block__wrapper">
+          <div class="service-block__colors">
+            <label class="service-block__colors-lbl" for="red"></label>
+            <input id="red" type="radio" name="color" value="1">
+            <label class="service-block__colors-lbl" for="green"></label>
+            <input id="green" type="radio" name="color" value="2">
+            <label class="service-block__colors-lbl" for="blue"></label>
+            <input id="blue" type="radio" name="color" value="3">
+            <label class="service-block__colors-lbl" for="yellow"></label>
+            <input id="yellow" type="radio" name="color" value="4">
+          </div>
+          <p class="service-block__desc">
+            Цветное объявление намного заметнее в общем списке
+          </p>
+          <br>
+          <div class="service-block__btn">
+            <a href="addNewAd.html" class="b-btn b-btn--blue">
+              Покрасить
+            </a>
+          </div>
+          <div class="service-block__price">10 ед.</div>
+        </div>
+      </div>
+      <div class="service-block">
+        <i class="fa fa-photo service-block__icon"></i>
+        <div class="service-block__wrapper">
+          <form action="/en/Room/MorePhotos" class="getUpForm" method="post">
+            <p class="service-block__msg">
+              Активно
+            </p>
+            <p class="service-block__desc">
+              Активируйет, чтобы показывать больше 6-ти фотографий. Ваш покупатель лучше оценит достоинства
+              Вашего товара.
+            </p>
+            <br>
+            <div class="service-block__btn">
+              <button href="addNewAd.html" class="b-btn b-btn--blue-spread" type="submit">
+                Больше фото
+              </button>
+            </div>
+            <div class="service-block__price">65 ед.</div>
+          </form>
+        </div>
+      </div>
+    </div> -->

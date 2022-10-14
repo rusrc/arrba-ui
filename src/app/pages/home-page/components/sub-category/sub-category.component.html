@@ -1,0 +1,44 @@
+<article class="sub-category">
+  <!-- <header class="bg-light p-3 d-none d-lg-block">
+    <h2 class="h4">{{getH2(item)}}</h2>
+  </header> -->
+  <!-- <div class="subcateg__header-arrawDown float-none"></div> -->
+  <ng-container *ngFor="let categoryWithBrands of item?.Categories">
+    <ng-container *ngIf="categoryWithBrands?.Brands.length">
+      <header class="row align-items-center">
+        <div class="col-sm-2 d-none d-lg-block">
+          <img (deferLoad)="console.log('image loaded')" class="img-fluid"
+            src="{{host}}/content/categories/{{categoryWithBrands?.CategoryFileName}}"
+            alt="{{categoryWithBrands?.CategoryName}} на аррба.ру">
+        </div>
+        <div class="col-sm-12 col-lg-4">
+          <h3 class="h5 pt-3 pb-3 p-lg-0">
+            <a class="text-capitalize"
+              [routerLink]="['categories', categoryWithBrands?.CategoryAlias]">{{categoryWithBrands?.CategoryName}}</a>
+          </h3>
+        </div>
+        <div class="col-12 col-lg d-none d-lg-block">
+          <span class="categItem__allMarks-text">
+            <a class="arrowDown text-muted">
+              <!-- Все марки -->
+            </a>
+          </span>
+        </div>
+        <div class="col-12 col-lg align-self-center align-self-end">
+          <a [routerLink]="['add-new-item', categoryWithBrands?.CategoryId]" class="btn btn-warning btn-block">
+            <i class="fa fa-plus"></i>&nbsp; Продать
+          </a>
+        </div>
+      </header>
+      <footer class="row pb-3 pt-3 pt-lg-0">
+        <small class="col-md-6 col-lg-3" *ngFor="let brandWithAds of categoryWithBrands?.Brands; let i = index">
+          <a [routerLink]="['categories', categoryWithBrands?.CategoryAlias, brandWithAds?.BrandName]"
+            class="text-muted d-block pt-md-1 pb-md-1">
+            {{brandWithAds?.BrandName}}
+            <span>({{brandWithAds?.VehicleCount}})</span>
+          </a>
+        </small>
+      </footer>
+    </ng-container>
+  </ng-container>
+</article>

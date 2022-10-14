@@ -1,0 +1,47 @@
+<section class="hot">
+  <header class="hot__header">
+    <div class="container">
+      <div class="col-md-8">
+        <span class="hot__header-title">Горячие предложение в регионе "Московская область"</span>
+      </div>
+      <div class="col-md-4">
+        <a class="hot__header-howgethot" href="/">
+          <i class="fa fa-question-circle" style="color:#4fc1e9;"></i> Как сюда попасть</a>
+      </div>
+    </div>
+  </header>
+  <div class="hot__wrapper">
+    <div class="container">
+      <div class="row hot__body">
+        <div class="col-md-12 hot__grid">
+          <div *ngIf="!hotItems && !error">Loading...</div>
+          <div *ngIf="error" class="alert alert-danger" role="alert">{{error}}</div>
+          <!-- <ngx-masonry [options]="{ gutter: 7 }">
+            <ngxMasonryItem class="hot__item hot__grid-item hot__item-increase" 
+              *ngFor="let hotItem of hotItems" 
+              style="width: 120px!important;">
+              <app-hot-block-item [hotItem]="hotItem"></app-hot-block-item>
+            </ngxMasonryItem>
+          </ngx-masonry> -->
+          <!-- TODO Add banner -->
+          <!-- <div class="hot__grid-item hot__grid-item--width2 hot__item-reklama" style="position: absolute; left: 0px; top: 200px;">
+                <img src="../Arrba/imgs/banner3.gif" alt=""> 
+              </div> -->
+        </div>
+        <div class="col-md-12">
+          <footer class="hot__footer">
+            <div class="col-md-5 hot__footer-totalCount"> Всего
+              <b>254 000</b> объявлений на сайте </div>
+            <div class="col-md-2 hot__footer-btn">
+              <a routerLink="/add-new-item" class="b-btn b-btn--blue b-btn--spread">
+                <i class="fa fa-plus"></i> Продать </a>
+            </div>
+            <div class="col-md-5 hot__footer-totalCount-today">
+              <b>54 000</b> объявлений подано сегодня
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

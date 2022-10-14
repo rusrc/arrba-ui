@@ -1,0 +1,11 @@
+.dummy-header {
+    height: 65px;
+    background: #2e3641;
+}
+
+
+.dummy-footer {
+    margin: 20px 0;
+    padding: 20px 0;
+    background: #d9d9d9;
+}
